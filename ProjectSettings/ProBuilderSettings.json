@@ -28,17 +28,29 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< Updated upstream
                 "key": "editor.toolbarIconGUI",
-                "value": "{\"m_Value\":false}"
-            },
-            {
-                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+=======
                 "key": "UnityEngine.ProBuilder.ProBuilderEditor-isUtilityWindow",
+>>>>>>> Stashed changes
                 "value": "{\"m_Value\":false}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< Updated upstream
+                "key": "UnityEngine.ProBuilder.ProBuilderEditor-isUtilityWindow",
+=======
                 "key": "editor.backFaceSelectEnabled",
+>>>>>>> Stashed changes
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< Updated upstream
+                "key": "editor.backFaceSelectEnabled",
+=======
+                "key": "editor.toolbarIconGUI",
+>>>>>>> Stashed changes
                 "value": "{\"m_Value\":false}"
             },
             {
@@ -68,11 +80,14 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< Updated upstream
                 "key": "editor.closeWindowAfterShapeCreation",
                 "value": "{\"m_Value\":false}"
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+=======
+>>>>>>> Stashed changes
                 "key": "editor.showEditorNotifications",
                 "value": "{\"m_Value\":false}"
             },
@@ -129,7 +144,11 @@
             {
                 "type": "System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "ExtrudeFaces.distance",
+<<<<<<< Updated upstream
                 "value": "{\"m_Value\":0.5}"
+=======
+                "value": "{\"m_Value\":1.0}"
+>>>>>>> Stashed changes
             }
         ]
     }
