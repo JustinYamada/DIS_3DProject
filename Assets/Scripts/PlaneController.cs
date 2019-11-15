@@ -22,5 +22,6 @@ public class PlaneController : MonoBehaviour
             float offsetDistance = hit.distance;
             Debug.DrawLine(downwardPointer.transform.position, hit.point, Color.cyan);
         }
+        downwardPointer.transform.position = ball.transform.position;
     }
 }
