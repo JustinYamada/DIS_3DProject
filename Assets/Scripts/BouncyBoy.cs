@@ -7,10 +7,7 @@ public class BouncyBoy : MonoBehaviour
 {
 
     public float bounceforce = 3;
-    public float speed = 2;
-    public GameObject player;
 
-    private NavMeshAgent agent;
     private Vector3 initialScale;
     private Rigidbody rb;
 
@@ -18,16 +15,18 @@ public class BouncyBoy : MonoBehaviour
     void Start()
     {
         initialScale = transform.localScale;
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.destination = player.transform.position;
         rb.velocity = Vector3.zero;
+        Vector3 lp = transform.localPosition;
+        lp.x = -0.5f;
+        lp.y = 0.0f;
+        lp.z = 0.5f;
+        transform.localPosition = lp;
     }
 
     void OnCollisionEnter(Collision col)
@@ -70,13 +69,13 @@ public class BouncyBoy : MonoBehaviour
             }
             newDir.y = 0;
 
-            col.rigidbody.velocity = newDir * bounceforce;
+            col.rigidbody.velocity = newDir * (bounceforce / 1);
         }
     }
 
     IEnumerator Thiccen()
     {
-        transform.localScale *= 1.1f;
+        transform.localScale *= 1.5f;
 
         for(int i = 0; i < 3; i++)
             yield return null;
