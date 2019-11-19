@@ -5,11 +5,11 @@ using System.Collections;
 public class PlayerContTest : MonoBehaviour
 {
 
-    public float speed;
+    public float speed = 10;
     public Text countText;
 
     private Rigidbody rb;
-    private int count;
+    public int count;
 
     void Start()
     {
