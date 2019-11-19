@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class mattBallController : MonoBehaviour
 {
-    public float maxAccel;
+    public float maxSpeed;
 
     public float acceleration;
 
@@ -15,7 +15,7 @@ public class mattBallController : MonoBehaviour
 
     private Rigidbody ball;
 
-    followBall camera;
+    public followBall camera;
 
 
     // Start is called before the first frame update
@@ -23,7 +23,6 @@ public class mattBallController : MonoBehaviour
     {
         currentAccel = 0;
         ball = GetComponent<Rigidbody>();
-        camera = new followBall();
     }
     
 
@@ -33,37 +32,63 @@ public class mattBallController : MonoBehaviour
         
 
         Vector3 forward = camera.directionFacing();
+        print("Vertical: " + Input.GetAxis("Vertical"));
+        print("Horizontal: " + Input.GetAxis("Horizontal"));
 
-        
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        movement *= acceleration;
+        if ((Input.GetAxis("Vertical") > 0) && (ball.velocity.y < maxSpeed))
+        {
+            moveForwards(forward);
+        }
+
+        if ((Input.GetAxis("Vertical") < 0) && (ball.velocity.y > -maxSpeed))
+        {
+            moveBackwards(forward);
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            turnRight();
+        }
+
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            turnLeft();
+        }
+
         ball.AddForce(movement);
-    }
-
-    private void moveFromDirection(Vector3 forward)
-    {
-        
+        movement = new Vector3(0, 0, 0);
     }
 
 
-    private void moveForwards()
+
+    private void moveForwards(Vector3 forward)
     {
+        forward *= acceleration;
+        movement = forward;
+    }
+
+    private void moveBackwards(Vector3 forward)
+    {
+        forward *= -acceleration;
+        movement = forward;
+    }
+    public float torque;
+    private void turnRight()
+    {
+        if (ball.angularVelocity.magnitude > -2)
+        {
+            ball.AddTorque(transform.up * torque, ForceMode.Force);
+        }
+        //ball.AddTorque(transform.up * torque, ForceMode.Force);
 
     }
 
-    private void moveBackwards()
+    private void turnLeft()
     {
-
-    }
-    
-    private void moveRight()
-    {
-
-    }
-
-    private void moveLeft()
-    {
-
+        if (ball.angularVelocity.magnitude < 2)
+        {
+            ball.AddTorque(-transform.up * torque, ForceMode.Force);
+        }
     }
 
 
