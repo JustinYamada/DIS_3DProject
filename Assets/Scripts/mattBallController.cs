@@ -126,18 +126,18 @@ public class mattBallController : MonoBehaviour
 
         }
 
-        print("Acceleration: " + acceleration);
+        //print("Acceleration: " + acceleration);
         
         if (ball.velocity.x > highestSpeed)
         {
             highestSpeed = ball.velocity.x;
-            print(highestSpeed);
+            //print(highestSpeed);
         }
 
         if (ball.velocity.y > highestSpeed)
         {
             highestSpeed = ball.velocity.y;
-            print(highestSpeed);
+            //print(highestSpeed);
         }
 
 
