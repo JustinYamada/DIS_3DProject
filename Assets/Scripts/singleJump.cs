@@ -22,4 +22,12 @@ public class singleJump : MonoBehaviour
     }
 
 
+
+    public void buyJumpItem()
+    {
+        numJumps++;
+    }
+
+
+
 }

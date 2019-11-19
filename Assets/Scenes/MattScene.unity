@@ -495,10 +495,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1823092016}
   distance: 7.5
-  minVerticalAngle: -80
-  maxVerticalAngle: 80
-  verticalSpeed: 150
-  horizontalSpeed: 300
   angleX: -30
 --- !u!1 &1352694125
 GameObject:
@@ -792,7 +788,7 @@ GameObject:
   - component: {fileID: 1823092022}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -17,12 +17,15 @@ public class mattBallController : MonoBehaviour
 
     public followBall camera;
 
+    singleJump jumpItem;
+
 
     // Start is called before the first frame update
     void Start()
     {
         currentAccel = 0;
         ball = GetComponent<Rigidbody>();
+        jumpItem = new singleJump();
     }
     
 
