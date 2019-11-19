@@ -19,25 +19,24 @@ public class mattBallController : MonoBehaviour
 
     singleJump jumpItem;
 
+    public bool onGround = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
         currentAccel = 0;
         ball = GetComponent<Rigidbody>();
-        jumpItem = new singleJump();
+        gameObject.AddComponent<singleJump>();
+        jumpItem = gameObject.GetComponent<singleJump>();
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        
-
         Vector3 forward = camera.directionFacing();
-        print("Vertical: " + Input.GetAxis("Vertical"));
-        print("Horizontal: " + Input.GetAxis("Horizontal"));
-
+        
         if ((Input.GetAxis("Vertical") > 0) && (ball.velocity.y < maxSpeed))
         {
             moveForwards(forward);
@@ -60,6 +59,15 @@ public class mattBallController : MonoBehaviour
 
         ball.AddForce(movement);
         movement = new Vector3(0, 0, 0);
+
+
+        if (Input.GetKeyDown("space"))
+        {
+            jumpItem.buyJumpItem();
+            jumpItem.useSingleJump(gameObject);
+        }
+
+
     }
 
 
@@ -96,9 +104,5 @@ public class mattBallController : MonoBehaviour
 
 
 
-    public bool ballOnGround()
-    {
-        return true;
-    }
 
 }

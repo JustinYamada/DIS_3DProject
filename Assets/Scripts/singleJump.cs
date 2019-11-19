@@ -5,29 +5,35 @@ using UnityEngine;
 public class singleJump : MonoBehaviour
 {
 
-    public float jumpHeight = 5;
+    public float jumpHeight = 500;
+    public float jumpCoolDown = 4;
     public float numJumps = 0;
 
-    private mattBallController monkeyBall;
+    private bool isJumping = false;
 
     public void useSingleJump(GameObject player)
     {
-        if ((numJumps > 0) && (monkeyBall.ballOnGround()))
+        StartCoroutine(Jump(player));
+    }
+
+    IEnumerator Jump(GameObject player)
+    {
+        if ((numJumps > 0) && (!isJumping))
         {
+            isJumping = true;
             Vector3 jump = new Vector3(0, jumpHeight, 0);
             Rigidbody ball = player.GetComponent<Rigidbody>();
             ball.AddForce(jump);
             numJumps--;
         }
+        yield return new WaitForSeconds(jumpCoolDown);
+        isJumping = false;
     }
 
-
-
-    public void buyJumpItem()
+        public void buyJumpItem()
     {
         numJumps++;
     }
-
 
 
 }

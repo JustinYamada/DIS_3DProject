@@ -40,7 +40,6 @@ public class followBall : MonoBehaviour
         //angleX += Input.GetAxis("Mouse Y") * Time.deltaTime * verticalSpeed;
         //angleY += Input.GetAxis("Horizontal") * Time.deltaTime * verticalSpeed;
         angleY = player.transform.eulerAngles.y;
-        print(angleY);
         //angleX = Mathf.Clamp(angleX, minVerticalAngle, maxVerticalAngle);
         //angleY %= 360;
 
