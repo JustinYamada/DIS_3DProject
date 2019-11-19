@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class mattBallController : MonoBehaviour
 {
-    public float maxSpeed;
+    public float maxSpeed = 500;
 
     public float acceleration;
 
@@ -18,8 +18,16 @@ public class mattBallController : MonoBehaviour
     public followBall camera;
 
     singleJump jumpItem;
+    speedUpItem speedItem;
 
     public bool onGround = true;
+
+
+    public float selectedIndex = 0;
+
+    private float highestSpeed = 10;
+
+
 
 
     // Start is called before the first frame update
@@ -29,6 +37,8 @@ public class mattBallController : MonoBehaviour
         ball = GetComponent<Rigidbody>();
         gameObject.AddComponent<singleJump>();
         jumpItem = gameObject.GetComponent<singleJump>();
+        gameObject.AddComponent<speedUpItem>();
+        speedItem = gameObject.GetComponent<speedUpItem>();
     }
     
 
@@ -60,12 +70,77 @@ public class mattBallController : MonoBehaviour
         ball.AddForce(movement);
         movement = new Vector3(0, 0, 0);
 
+        if ((Input.GetKeyDown(KeyCode.Keypad1)) || (Input.GetKeyDown(KeyCode.Alpha1)))
+        {
+            selectedIndex = 0;
+        }
+        if ((Input.GetKeyDown(KeyCode.Keypad2)) || (Input.GetKeyDown(KeyCode.Alpha2)))
+        {
+            selectedIndex = 1;
+        }
+        if ((Input.GetKeyDown(KeyCode.Keypad3)) || (Input.GetKeyDown(KeyCode.Alpha3)))
+        {
+            selectedIndex = 2;
+        }
+        if ((Input.GetKeyDown(KeyCode.Keypad4)) || (Input.GetKeyDown(KeyCode.Alpha4)))
+        {
+            selectedIndex = 3;
+        }
+        if ((Input.GetKeyDown(KeyCode.Keypad5)) || (Input.GetKeyDown(KeyCode.Alpha5)))
+        {
+            selectedIndex = 4;
+        }
+
+
+        
+
+
 
         if (Input.GetKeyDown("space"))
         {
-            jumpItem.buyJumpItem();
-            jumpItem.useSingleJump(gameObject);
+            switch (selectedIndex)
+            {
+                case 0:
+                    print("Jump");
+                    jumpItem.buyJumpItem();
+                    jumpItem.useSingleJump(gameObject);
+                    break;
+                case 1:
+                    print("Speed Up");
+                    speedItem.buySpeedItem();
+                    speedItem.useSpeedItem(gameObject);
+                    break;
+                case 2:
+                    print("Slow Time");
+                    break;
+                case 3:
+                    print("Phase Through Obstacles");
+                    break;
+                case 4:
+                    print("Item 5");
+                    break;
+                case 5:
+                    print("Item 6");
+                    break;
+            }
+
         }
+
+        print("Acceleration: " + acceleration);
+        
+        if (ball.velocity.x > highestSpeed)
+        {
+            highestSpeed = ball.velocity.x;
+            print(highestSpeed);
+        }
+
+        if (ball.velocity.y > highestSpeed)
+        {
+            highestSpeed = ball.velocity.y;
+            print(highestSpeed);
+        }
+
+
 
 
     }
