@@ -19,42 +19,43 @@ public class PlatformSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!spinning)
+        if (!spinning)
         {
             StartCoroutine(Spin());
         }
 
-    IEnumerator Spin()
-    {
-        spinning = true;
-        int divisor;
-        if (randomSpin)
-            divisor = Random.Range(2, 8);
-        else
-            divisor = 1;
-
-        Quaternion NewRotation = Quaternion.AngleAxis(180.0f / divisor, Vector3.up);
-
-        float angle = Quaternion.Angle(NewRotation, Quaternion.identity);
-
-        float angleDelta = angle / spinTime;
-        float curangle = 0;
-
-        while (curangle < angle)
+        IEnumerator Spin()
         {
-            curangle += angleDelta;
-            transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
-            yield return null;
+            spinning = true;
+            int divisor;
+            if (randomSpin)
+                divisor = Random.Range(2, 8);
+            else
+                divisor = 1;
+
+            Quaternion NewRotation = Quaternion.AngleAxis(180.0f / divisor, Vector3.up);
+
+            float angle = Quaternion.Angle(NewRotation, Quaternion.identity);
+
+            float angleDelta = angle / spinTime;
+            float curangle = 0;
+
+            while (curangle < angle)
+            {
+                curangle += angleDelta;
+                transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
+                yield return null;
+            }
+
+            while (curangle > 0)
+            {
+                curangle -= angleDelta;
+                transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
+                yield return null;
+            }
+
+
+            spinning = false;
         }
-
-        while (curangle > 0)
-        {
-            curangle -= angleDelta;
-            transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
-            yield return null;
-        }
-
-
-        spinning = false;
     }
 }
