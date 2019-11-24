@@ -9,6 +9,9 @@ public class singleJump : MonoBehaviour
     public float jumpCoolDown = 4;
     public float numJumps = 0;
 
+    public float jumpLevel = 1;
+    public float jumpLevelIncrease = 50;
+
     private bool isJumping = false;
 
     public void useSingleJump(GameObject player)
@@ -21,7 +24,7 @@ public class singleJump : MonoBehaviour
         if ((numJumps > 0) && (!isJumping))
         {
             isJumping = true;
-            Vector3 jump = new Vector3(0, jumpHeight, 0);
+            Vector3 jump = new Vector3(0, (jumpHeight + (jumpLevel * jumpLevelIncrease)), 0);
             Rigidbody ball = player.GetComponent<Rigidbody>();
             ball.AddForce(jump);
             numJumps--;
@@ -33,6 +36,18 @@ public class singleJump : MonoBehaviour
         public void buyJumpItem()
     {
         numJumps++;
+    }
+
+    public void levelUpJump()
+    {
+        jumpLevel++;
+    }
+
+    public int resetJumpLevel()
+    {
+        int levelsReturned = (int)jumpLevel;
+        jumpLevel = 1;
+        return levelsReturned - 1;
     }
 
 

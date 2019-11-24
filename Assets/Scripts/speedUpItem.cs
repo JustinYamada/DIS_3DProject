@@ -10,6 +10,11 @@ public class speedUpItem : MonoBehaviour
     public float speedDuration = 5;
     public float numSpeedItems = 0;
 
+
+
+    public float speedItemLevel = 1;
+    public float speedItemLevelIncrease = 1.5f;
+
     private bool isSpeeding;
     mattBallController accelerator;
 
@@ -27,21 +32,45 @@ public class speedUpItem : MonoBehaviour
         if ((numSpeedItems > 0) && (!isSpeeding))
         {
             accelerator = player.GetComponent<mattBallController>();
-            accelerator.acceleration *= speedMultiplier;
-            accelerator.maxSpeed *= speedMultiplier;
+            accelerator.acceleration *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+            accelerator.maxSpeed *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
             isSpeeding = true;
             numSpeedItems--;
         }
-        yield return new WaitForSeconds(speedDuration + .5f);
+        yield return new WaitForSeconds(speedDuration);
         isSpeeding = false;
-        accelerator.acceleration /= speedMultiplier;
-        accelerator.maxSpeed /= speedMultiplier;
+        accelerator.acceleration /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+        accelerator.maxSpeed /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
 
     }
 
     public void buySpeedItem()
     {
         numSpeedItems++;
+    }
+
+    public void levelUpSpeed()
+    {
+        speedItemLevel++;
+    }
+
+    public int resetSpeedLevel()
+    {
+        int levelsReturned = (int)speedItemLevel;
+        speedItemLevel = 0;
+        return levelsReturned;
+    }
+
+    public void levelUpSpeedDuration()
+    {
+        speedDuration++;
+    }
+
+    public int resetSpeedDuration()
+    {
+        int levelsReturned = (int)speedItemLevel;
+        speedDuration = 5;
+        return (levelsReturned - 5);
     }
 
 

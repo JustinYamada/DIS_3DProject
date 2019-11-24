@@ -10,7 +10,6 @@ public class mattBallController : MonoBehaviour
     public float acceleration;
 
 
-    private float currentAccel;
     private Vector3 movement;
 
     private Rigidbody ball;
@@ -25,7 +24,29 @@ public class mattBallController : MonoBehaviour
 
     public float selectedIndex = 0;
 
-    private float highestSpeed = 10;
+
+
+    public float torque = .25f;
+
+    private float verticalInput = 0f;
+    private float horizontalInput = 0f;
+
+
+    /*
+     * LOOK INTO SEPHAMORE WAIT FOR SIGNAL
+     * WHY DOES IT HAVE A 95 Millesecond processing time. It is in other in the profiler on the cpu usage
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 
 
 
@@ -33,7 +54,6 @@ public class mattBallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentAccel = 0;
         ball = GetComponent<Rigidbody>();
         gameObject.AddComponent<singleJump>();
         jumpItem = gameObject.GetComponent<singleJump>();
@@ -46,23 +66,26 @@ public class mattBallController : MonoBehaviour
     void Update()
     {
         Vector3 forward = camera.directionFacing();
-        
-        if ((Input.GetAxis("Vertical") > 0) && (ball.velocity.y < maxSpeed))
+
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        if ((verticalInput > 0) && (ball.velocity.z < maxSpeed) && (ball.velocity.x < maxSpeed))
         {
             moveForwards(forward);
         }
 
-        if ((Input.GetAxis("Vertical") < 0) && (ball.velocity.y > -maxSpeed))
+        else if ((verticalInput < 0) && (ball.velocity.z > -maxSpeed) && (ball.velocity.x > -maxSpeed))
         {
             moveBackwards(forward);
         }
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (horizontalInput > 0)
         {
             turnRight();
         }
 
-        if (Input.GetAxis("Horizontal") < 0)
+        else if (horizontalInput < 0)
         {
             turnLeft();
         }
@@ -74,19 +97,19 @@ public class mattBallController : MonoBehaviour
         {
             selectedIndex = 0;
         }
-        if ((Input.GetKeyDown(KeyCode.Keypad2)) || (Input.GetKeyDown(KeyCode.Alpha2)))
+        else if ((Input.GetKeyDown(KeyCode.Keypad2)) || (Input.GetKeyDown(KeyCode.Alpha2)))
         {
             selectedIndex = 1;
         }
-        if ((Input.GetKeyDown(KeyCode.Keypad3)) || (Input.GetKeyDown(KeyCode.Alpha3)))
+        else if ((Input.GetKeyDown(KeyCode.Keypad3)) || (Input.GetKeyDown(KeyCode.Alpha3)))
         {
             selectedIndex = 2;
         }
-        if ((Input.GetKeyDown(KeyCode.Keypad4)) || (Input.GetKeyDown(KeyCode.Alpha4)))
+        else if ((Input.GetKeyDown(KeyCode.Keypad4)) || (Input.GetKeyDown(KeyCode.Alpha4)))
         {
             selectedIndex = 3;
         }
-        if ((Input.GetKeyDown(KeyCode.Keypad5)) || (Input.GetKeyDown(KeyCode.Alpha5)))
+        else if ((Input.GetKeyDown(KeyCode.Keypad5)) || (Input.GetKeyDown(KeyCode.Alpha5)))
         {
             selectedIndex = 4;
         }
@@ -125,48 +148,41 @@ public class mattBallController : MonoBehaviour
             }
 
         }
-
-        //print("Acceleration: " + acceleration);
-        
-        if (ball.velocity.x > highestSpeed)
-        {
-            highestSpeed = ball.velocity.x;
-            //print(highestSpeed);
-        }
-
-        if (ball.velocity.y > highestSpeed)
-        {
-            highestSpeed = ball.velocity.y;
-            //print(highestSpeed);
-        }
-
-
-
-
     }
 
 
 
     private void moveForwards(Vector3 forward)
     {
-        forward *= acceleration;
+        if (Time.deltaTime != 0)
+        {
+            forward *= acceleration * Time.deltaTime;
+        }
+        else
+        {
+            forward *= acceleration;
+        }
         movement = forward;
     }
 
     private void moveBackwards(Vector3 forward)
     {
-        forward *= -acceleration;
+        if (Time.deltaTime != 0)
+        {
+            forward *= -acceleration * Time.deltaTime;
+        }
+        else
+        {
+            forward *= -acceleration;
+        }
         movement = forward;
     }
-    public float torque;
     private void turnRight()
     {
         if (ball.angularVelocity.magnitude > -2)
         {
             ball.AddTorque(transform.up * torque, ForceMode.Force);
         }
-        //ball.AddTorque(transform.up * torque, ForceMode.Force);
-
     }
 
     private void turnLeft()
