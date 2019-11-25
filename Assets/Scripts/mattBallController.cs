@@ -159,9 +159,9 @@ public class mattBallController : MonoBehaviour
 
     private void moveForwards(Vector3 forward)
     {
-        if (Time.deltaTime != 0)
+        if (Time.unscaledDeltaTime != 0)
         {
-            forward *= acceleration * Time.deltaTime;
+            forward *= acceleration * Time.unscaledDeltaTime;
         }
         else
         {
@@ -172,9 +172,9 @@ public class mattBallController : MonoBehaviour
 
     private void moveBackwards(Vector3 forward)
     {
-        if (Time.deltaTime != 0)
+        if (Time.unscaledDeltaTime != 0)
         {
-            forward *= -acceleration * Time.deltaTime;
+            forward *= -acceleration * Time.unscaledDeltaTime;
         }
         else
         {
@@ -198,6 +198,17 @@ public class mattBallController : MonoBehaviour
         }
     }
 
+
+    public void pauseTime()
+    {
+        Time.timeScale = 1f;
+        print("paused");
+    }
+    public void unPauseTime()
+    {
+        Time.timeScale = 0f;
+        print("Unpaused");
+    }
 
 
 
