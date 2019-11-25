@@ -18,6 +18,7 @@ public class mattBallController : MonoBehaviour
 
     singleJump jumpItem;
     speedUpItem speedItem;
+    PhaseItem phaseItem;
 
     public bool onGround = true;
 
@@ -59,6 +60,8 @@ public class mattBallController : MonoBehaviour
         jumpItem = gameObject.GetComponent<singleJump>();
         gameObject.AddComponent<speedUpItem>();
         speedItem = gameObject.GetComponent<speedUpItem>();
+        gameObject.AddComponent<PhaseItem>();
+        phaseItem = gameObject.GetComponent<PhaseItem>();
     }
     
 
@@ -138,6 +141,8 @@ public class mattBallController : MonoBehaviour
                     break;
                 case 3:
                     print("Phase Through Obstacles");
+                    phaseItem.buyPhaseItem();
+                    phaseItem.useSinglePhase(gameObject);
                     break;
                 case 4:
                     print("Item 5");

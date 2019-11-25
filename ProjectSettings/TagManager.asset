@@ -8,6 +8,7 @@ TagManager:
   - checkFloor
   - level
   - jumpPad
+  - Phasable
   layers:
   - Default
   - TransparentFX

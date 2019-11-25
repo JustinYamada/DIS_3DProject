@@ -49,6 +49,11 @@ public class speedUpItem : MonoBehaviour
         numSpeedItems++;
     }
 
+    public void buySpeedItem(int numItems)
+    {
+        numSpeedItems += numItems;
+    }
+
     public void levelUpSpeed()
     {
         speedItemLevel++;

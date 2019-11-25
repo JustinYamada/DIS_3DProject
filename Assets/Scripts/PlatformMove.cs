@@ -8,21 +8,17 @@ public class PlatformMove : MonoBehaviour
     public float moveDistanceForward = 0;
     public float moveDistanceUp = 0;
 
-    public float movementSpeed = 2;
+    public float movementSpeed = 2.5f;
 
     private Vector3 origin;
 
     private Vector3 goalPos;
 
-    private Vector3 movement;
+    private float journeyLength;
+    private float startTime;
+    private float currentFraction;
 
     private bool goToGoal = true;
-
-
-    private float slowestToGoal;
-
-
-    //If there is a value for the moveDistance, then it is moved that direction first and the opposite direction back
 
     // Start is called before the first frame update
     void Start()
@@ -32,63 +28,28 @@ public class PlatformMove : MonoBehaviour
         goalPos.z = transform.position.z + moveDistanceForward;
         goalPos.y = transform.position.y + moveDistanceUp;
 
-        float min = moveDistanceRight;
-
-        if (min > moveDistanceUp)
-        {
-            min = moveDistanceUp;
-        }
-        if (min > moveDistanceForward)
-        {
-            min = moveDistanceForward;
-        }
-        slowestToGoal = min / movementSpeed;
+        journeyLength = Vector3.Distance(origin, goalPos);
+        startTime = Time.time;        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > goalPos.x)
-        {
-            goToGoal = !goToGoal;
-            movementSpeed = -movementSpeed;
-            slowestToGoal = -slowestToGoal;
-        }
-        else if (transform.position.x < origin.x)
-        {
-            goToGoal = !goToGoal;
-            movementSpeed = -movementSpeed;
-            slowestToGoal = -slowestToGoal;
-        }
 
+        currentFraction = ((Time.time - startTime) * movementSpeed) / journeyLength;
 
-        if (goToGoal)
+        if (currentFraction >= 1)
         {
-            if (movement.x + transform.position.x < goalPos.x)
-            {
-                movement.x = moveDistanceRight / slowestToGoal;
-                movement.y = moveDistanceUp / slowestToGoal;
-                movement.z = moveDistanceForward / slowestToGoal;
-            }
-            else
-            {
-                transform.position = goalPos;
-            }
+            startTime = Time.time;
+            goToGoal = !goToGoal;
+        }
+        else if (goToGoal)
+        {
+            transform.position = Vector3.Lerp(origin, goalPos, currentFraction);
         }
         else
         {
-            if (movement.x - transform.position.x < origin.x)
-            {
-                movement.x = moveDistanceRight / slowestToGoal;
-                movement.y = moveDistanceUp / slowestToGoal;
-                movement.z = moveDistanceForward / slowestToGoal;
-            }
-            else
-            {
-                transform.position = origin;
-            }
+            transform.position = Vector3.Lerp(goalPos, origin, currentFraction);
         }
-        transform.position = transform.position + movement;
-
     }
 }

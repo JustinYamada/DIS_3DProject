@@ -33,9 +33,14 @@ public class singleJump : MonoBehaviour
         isJumping = false;
     }
 
-        public void buyJumpItem()
+    public void buyJumpItem()
     {
         numJumps++;
+    }
+
+    public void buyJumpItem(int numItems)
+    {
+        numJumps += numItems;
     }
 
     public void levelUpJump()
