@@ -5,9 +5,6 @@ using UnityEngine;
 public class PhaseItem : MonoBehaviour
 {
     public float phaseCooldown = 15;
-    public float numPhases = 0;
-
-    public float phaseLevel = 1;
     public float phaseTime = 5;
     public float phaseTimeIncrease = .5f;
 
@@ -26,7 +23,7 @@ public class PhaseItem : MonoBehaviour
 
     IEnumerator Phase(GameObject player)
     {
-        if ((numPhases > 0) && (!isPhasing))
+        if ((singletonGameManager.Instance.getNumPhaseItems() > 0) && (!isPhasing))
         {
             isPhasing = true;
 
@@ -40,7 +37,7 @@ public class PhaseItem : MonoBehaviour
                     StartCoroutine(PhaseOn(collider, phase));
                 }
             }
-            numPhases--;
+            singletonGameManager.Instance.numPhaseItem--;
         }
         yield return new WaitForSeconds(phaseCooldown);
         isPhasing = false;
@@ -57,33 +54,31 @@ public class PhaseItem : MonoBehaviour
 
         phase.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         collider.enabled = false;
-        yield return new WaitForSeconds(phaseTime + (phaseTimeIncrease * phaseLevel));
+        yield return new WaitForSeconds(phaseTime + (phaseTimeIncrease * singletonGameManager.Instance.phaseItemLevel));
 
         render.material.color = holder;
         collider.enabled = true;
         phase.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 
-    public void buyPhaseItem()
+    public bool buyPhaseItem()
     {
-        numPhases++;
+        return singletonGameManager.Instance.buyPhaseItem(1);
     }
 
-    public void buyPhaseItem(int numItems)
+    public bool buyPhaseItem(int numItems)
     {
-        numPhases += numItems;
+        return singletonGameManager.Instance.buyPhaseItem(numItems);
     }
 
-    public void levelUpPhase()
+    public bool levelUpPhase(int numLevels)
     {
-        phaseLevel++;
+        return singletonGameManager.Instance.levelUpPhaseItem(numLevels);
     }
 
-    public int resetPhaseLevel()
+    public void resetPhaseLevel()
     {
-        int levelsReturned = (int)phaseLevel;
-        phaseLevel = 1;
-        return levelsReturned - 1;
+        singletonGameManager.Instance.resetPhaseItemLevel();
     }
 
 
