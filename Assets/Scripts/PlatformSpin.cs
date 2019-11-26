@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class PlatformSpin : MonoBehaviour
 {
-    public float spinForce = 10;
+    public float spinForce = 1.0f;
 
-    private bool spinning;
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        spinning = false;
         rb = GetComponent<Rigidbody>();
-
-        rb.AddTorque(transform.up * spinForce * 1000, ForceMode.Force);
     }
 
     // Update is called once per frame
     void Update()
     {
+        rb.angularVelocity = new Vector3(0, spinForce, 0);
 
     }
 
