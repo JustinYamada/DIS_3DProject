@@ -7,6 +7,9 @@ public class PlatformTilt : MonoBehaviour
     public float tiltTime = 10;
     public bool TiltOnRightAxis = true;
     public bool alternateTilt = false;
+    public bool randomTilt = false;
+
+    public float tiltAngle = 45.0f;
 
     private bool tilting;
     private Vector3 tiltAxis;
@@ -43,8 +46,13 @@ public class PlatformTilt : MonoBehaviour
     IEnumerator Tilt()
     {
         tilting = true;
+        int divisor;
+        if (randomTilt)
+            divisor = Random.Range(2, 8);
+        else
+            divisor = 1;
 
-        Quaternion NewRotation = Quaternion.AngleAxis(90.0f / Random.Range(2, 8), tiltAxis);
+        Quaternion NewRotation = Quaternion.AngleAxis(tiltAngle / divisor, tiltAxis);
 
         float angle = Quaternion.Angle(NewRotation, Quaternion.identity);
         float angleDelta = angle / tiltTime;
