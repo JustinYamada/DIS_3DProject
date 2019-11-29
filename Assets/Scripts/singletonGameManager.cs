@@ -52,10 +52,10 @@ public class singletonGameManager : MonoBehaviour
                 instance = FindObjectOfType<singletonGameManager>();
                 if (instance == null)
                 {
-                    singletonGameManager.instance.loadEverything();
                     GameObject go = new GameObject();
                     go.name = "SingletonController";
                     instance = go.AddComponent<singletonGameManager>();
+                    singletonGameManager.instance.loadEverything();
                     DontDestroyOnLoad(go);
                 }
             }
