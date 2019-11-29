@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mattBallController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class mattBallController : MonoBehaviour
     singleJump jumpItem;
     speedUpItem speedItem;
     PhaseItem phaseItem;
+    TimeSlowItem slowItem;
 
     public bool onGround = true;
 
@@ -62,6 +64,8 @@ public class mattBallController : MonoBehaviour
         speedItem = gameObject.GetComponent<speedUpItem>();
         gameObject.AddComponent<PhaseItem>();
         phaseItem = gameObject.GetComponent<PhaseItem>();
+        gameObject.AddComponent<TimeSlowItem>();
+        slowItem = gameObject.GetComponent<TimeSlowItem>();
 
         print(singletonGameManager.Instance.getNumFruit());
     }
@@ -140,6 +144,9 @@ public class mattBallController : MonoBehaviour
                     break;
                 case 2:
                     print("Slow Time");
+                    slowItem.BuySlowItem();
+                    singletonGameManager.Instance.numSlowItem = 10;
+                    slowItem.UseSlowItem();
                     break;
                 case 3:
                     print("Phase Through Obstacles");
@@ -154,6 +161,11 @@ public class mattBallController : MonoBehaviour
                     break;
             }
 
+        }
+
+        if(transform.position.y < -20)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

@@ -38,6 +38,7 @@ public class singletonGameManager : MonoBehaviour
     public int slowItemLevel = 1;
     public int slowItemUpgradePrice;
     public int slowItemPrice;
+    public float slowTimeMagnitude = 1.0f;
 
     public int[] scores = new int[8];
 
