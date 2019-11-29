@@ -53,7 +53,6 @@ public class BouncyBoy : MonoBehaviour
 
             if (relVel.magnitude < 3)
             {
-               print("low mag");
                 relVel.x += relVel.x < 0 ? -3 : 3;
                 relVel.y += relVel.y < 0 ? -3 : 3;
 
@@ -64,7 +63,6 @@ public class BouncyBoy : MonoBehaviour
             }
             else
             {
-                print("high mag");
                 newDir = Vector3.Reflect(relVel, colContact.normal);
             }
             newDir.y = 0;

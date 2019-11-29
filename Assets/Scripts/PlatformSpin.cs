@@ -4,58 +4,45 @@ using UnityEngine;
 
 public class PlatformSpin : MonoBehaviour
 {
-    public float spinTime = 10;
-    public bool randomSpin = false;
-    public float spinAmount = 180.0f;
+    public float spinForce = 1.0f;
 
-    private bool spinning;
+    [Tooltip("Enter 0 for x, 1 for y, 2 for z")]
+    public int spinAxis = 0;
+
+
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        spinning = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!spinning)
+        if (spinAxis == 0)
         {
-            StartCoroutine(Spin());
+            rb.angularVelocity = new Vector3(spinForce, 0, 0);
+            rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePosition;
         }
-
-        IEnumerator Spin()
+        else if (spinAxis == 1)
         {
-            spinning = true;
-            int divisor;
-            if (randomSpin)
-                divisor = Random.Range(2, 8);
-            else
-                divisor = 1;
+            rb.angularVelocity = new Vector3(0, spinForce, 0);
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePosition;
 
-            Quaternion NewRotation = Quaternion.AngleAxis(180.0f / divisor, Vector3.up);
+        }
+        else if (spinAxis == 2)
+        {
+            rb.angularVelocity = new Vector3(0, 0, spinForce);
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePosition; 
 
-            float angle = Quaternion.Angle(NewRotation, Quaternion.identity);
-
-            float angleDelta = angle / spinTime;
-            float curangle = 0;
-
-            while (curangle < angle)
-            {
-                curangle += angleDelta;
-                transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
-                yield return null;
-            }
-
-            while (curangle > 0)
-            {
-                curangle -= angleDelta;
-                transform.rotation = Quaternion.AngleAxis(curangle, Vector3.up);
-                yield return null;
-            }
-
-
-            spinning = false;
+        }
+        else
+        {
+            rb.angularVelocity = new Vector3(20, 20, 20);
+            print("Invalid spinAxis value! Change it to 0, 1 or 2!");
         }
     }
+
 }

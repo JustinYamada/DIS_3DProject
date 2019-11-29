@@ -62,6 +62,8 @@ public class mattBallController : MonoBehaviour
         speedItem = gameObject.GetComponent<speedUpItem>();
         gameObject.AddComponent<PhaseItem>();
         phaseItem = gameObject.GetComponent<PhaseItem>();
+
+        print(singletonGameManager.Instance.getNumFruit());
     }
     
 
