@@ -8,6 +8,8 @@ public class RotatorShop : MonoBehaviour
     public int yRotation;
     public int zRotation;
 
+    public float pointerY;
+
     void Update()
     {
         transform.Rotate(new Vector3(xRotation, yRotation, zRotation) * Time.deltaTime);
