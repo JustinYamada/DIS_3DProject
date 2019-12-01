@@ -12,11 +12,13 @@ public class PlatformTilt : MonoBehaviour
     public float tiltAngle = 45.0f;
 
     private bool tilting;
+    private float origTiltTime;
     private Vector3 tiltAxis;
 
     // Start is called before the first frame update
     void Start()
     {
+        origTiltTime = tiltTime;
         tilting = false;
         if(TiltOnRightAxis)
         {
@@ -38,6 +40,7 @@ public class PlatformTilt : MonoBehaviour
 
         if (!tilting)
         {
+            tiltTime = origTiltTime / singletonGameManager.Instance.slowTimeMagnitude;
             StartCoroutine(Tilt());
         }
 
