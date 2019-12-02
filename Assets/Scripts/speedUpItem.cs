@@ -9,7 +9,6 @@ public class speedUpItem : MonoBehaviour
 
     public float speedDuration = 5;
 
-    public float speedItemLevel = 1;
     public float speedItemLevelIncrease = 1.5f;
 
     private bool isSpeeding;
@@ -29,15 +28,15 @@ public class speedUpItem : MonoBehaviour
         if ((singletonGameManager.Instance.numSpeedItem > 0) && (!isSpeeding))
         {
             accelerator = player.GetComponent<mattBallController>();
-            accelerator.acceleration *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
-            accelerator.maxSpeed *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+            accelerator.acceleration *= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
+            accelerator.maxSpeed *= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
             isSpeeding = true;
             singletonGameManager.Instance.numSpeedItem--;
         }
         yield return new WaitForSeconds(speedDuration + singletonGameManager.Instance.speedItemLevel);
         isSpeeding = false;
-        accelerator.acceleration /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
-        accelerator.maxSpeed /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+        accelerator.acceleration /= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
+        accelerator.maxSpeed /= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
 
     }
 
