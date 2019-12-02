@@ -38,6 +38,7 @@ public class singletonGameManager : MonoBehaviour
     public int slowItemLevel = 1;
     public int slowItemUpgradePrice;
     public int slowItemPrice;
+    public float slowTimeMagnitude = 1.0f;
 
     public int[] scores = new int[8];
 
@@ -52,10 +53,10 @@ public class singletonGameManager : MonoBehaviour
                 instance = FindObjectOfType<singletonGameManager>();
                 if (instance == null)
                 {
-                    singletonGameManager.instance.loadEverything();
                     GameObject go = new GameObject();
                     go.name = "SingletonController";
                     instance = go.AddComponent<singletonGameManager>();
+                    singletonGameManager.instance.loadEverything();
                     DontDestroyOnLoad(go);
                 }
             }
