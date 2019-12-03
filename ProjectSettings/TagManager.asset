@@ -9,6 +9,7 @@ TagManager:
   - level
   - jumpPad
   - Phasable
+  - Super Pick Up
   layers:
   - Default
   - TransparentFX
