@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinForce: 1
+  spinAxis: 0
 --- !u!114 &686802546228697855
 MonoBehaviour:
   m_ObjectHideFlags: 0

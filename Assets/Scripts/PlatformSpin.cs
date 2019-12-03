@@ -50,4 +50,13 @@ public class PlatformSpin : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            //col.transform.rotation = transform.rotation;
+            //col.rigidbody.angularVelocity = new Vector3(spinForce, 0, 0);
+        }
+    }
+
 }
