@@ -36,6 +36,12 @@ public class PlayerContTest : MonoBehaviour
             count++;
             SetCountText();
         }
+        if (other.gameObject.CompareTag("Super Pick Up"))
+        {
+            other.gameObject.SetActive(false);
+            count += 10;
+            SetCountText();
+        }
     }
 
     void SetCountText()
