@@ -7,13 +7,18 @@ public class PlatformTilt : MonoBehaviour
     public float tiltTime = 10;
     public bool TiltOnRightAxis = true;
     public bool alternateTilt = false;
+    public bool randomTilt = false;
+
+    public float tiltAngle = 45.0f;
 
     private bool tilting;
+    private float origTiltTime;
     private Vector3 tiltAxis;
 
     // Start is called before the first frame update
     void Start()
     {
+        origTiltTime = tiltTime;
         tilting = false;
         if(TiltOnRightAxis)
         {
@@ -35,6 +40,7 @@ public class PlatformTilt : MonoBehaviour
 
         if (!tilting)
         {
+            tiltTime = origTiltTime / singletonGameManager.Instance.slowTimeMagnitude;
             StartCoroutine(Tilt());
         }
 
@@ -42,9 +48,15 @@ public class PlatformTilt : MonoBehaviour
 
     IEnumerator Tilt()
     {
+        //yeet
         tilting = true;
+        int divisor;
+        if (randomTilt)
+            divisor = Random.Range(2, 8);
+        else
+            divisor = 1;
 
-        Quaternion NewRotation = Quaternion.AngleAxis(90.0f / Random.Range(2, 8), tiltAxis);
+        Quaternion NewRotation = Quaternion.AngleAxis(tiltAngle / divisor, tiltAxis);
 
         float angle = Quaternion.Angle(NewRotation, Quaternion.identity);
         float angleDelta = angle / tiltTime;

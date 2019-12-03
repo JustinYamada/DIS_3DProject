@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65b64b7d70dbf446bb48cd5c934f9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  acceleration: 15
+  maxSpeed: 10000
+  acceleration: 1000
   camera: {fileID: 0}
   onGround: 1
   selectedIndex: 0

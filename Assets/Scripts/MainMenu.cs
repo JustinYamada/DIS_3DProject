@@ -12,22 +12,26 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        singletonGameManager.Instance.loadEverything();
         showMainMenu();
     }
 
     public void PlayGame()
     {
+        singletonGameManager.Instance.saveEverything();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
     {
+        singletonGameManager.Instance.saveEverything();
         Application.Quit();
         Debug.Log("Quitted");
     }
 
     public void loadStore()
     {
+        singletonGameManager.Instance.saveEverything();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -45,7 +49,15 @@ public class MainMenu : MonoBehaviour
 
     public void loadLevel(int num)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + num);
+        if (num <= singletonGameManager.Instance.highestLevelReached)
+        {
+            singletonGameManager.Instance.saveEverything();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + num);
+        }
+        else
+        {
+            print("Haven't reached that level yet, someone needs to handle this");
+        }
     }
     
 

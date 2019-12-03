@@ -52,11 +52,13 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        singletonGameManager.Instance.saveEverything();
         SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
     {
+        singletonGameManager.Instance.saveEverything();
         Application.Quit();
         Debug.Log("Quitted");
     }
@@ -64,6 +66,7 @@ public class PauseMenu : MonoBehaviour
     public void reloadLevel()
     {
         Scene scene = SceneManager.GetActiveScene();
+        singletonGameManager.Instance.saveEverything();
         SceneManager.LoadScene(scene.name);
     }
 

@@ -7,9 +7,8 @@ public class singleJump : MonoBehaviour
 
     public float jumpHeight = 500;
     public float jumpCoolDown = 4;
-    public float numJumps = 0;
 
-    public float jumpLevel = 1;
+
     public float jumpLevelIncrease = 50;
 
     private bool isJumping = false;
@@ -21,13 +20,13 @@ public class singleJump : MonoBehaviour
 
     IEnumerator Jump(GameObject player)
     {
-        if ((numJumps > 0) && (!isJumping))
+        if ((singletonGameManager.Instance.numJumpItem > 0) && (!isJumping))
         {
             isJumping = true;
-            Vector3 jump = new Vector3(0, (jumpHeight + (jumpLevel * jumpLevelIncrease)), 0);
+            Vector3 jump = new Vector3(0, (jumpHeight + (singletonGameManager.Instance.jumpItemLevel * jumpLevelIncrease)), 0);
             Rigidbody ball = player.GetComponent<Rigidbody>();
             ball.AddForce(jump);
-            numJumps--;
+            singletonGameManager.Instance.numJumpItem--;
         }
         yield return new WaitForSeconds(jumpCoolDown);
         isJumping = false;
@@ -35,24 +34,22 @@ public class singleJump : MonoBehaviour
 
     public void buyJumpItem()
     {
-        numJumps++;
+        singletonGameManager.Instance.buyJumpItem(1);
     }
 
     public void buyJumpItem(int numItems)
     {
-        numJumps += numItems;
+        singletonGameManager.Instance.buyJumpItem(numItems);
     }
 
-    public void levelUpJump()
+    public void levelUpJump(int numLevels)
     {
-        jumpLevel++;
+        singletonGameManager.Instance.levelUpJumpItem(numLevels);
     }
 
-    public int resetJumpLevel()
+    public void resetJumpLevel()
     {
-        int levelsReturned = (int)jumpLevel;
-        jumpLevel = 1;
-        return levelsReturned - 1;
+        singletonGameManager.Instance.resetJumpItemLevel();
     }
 
 

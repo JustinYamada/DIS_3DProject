@@ -8,11 +8,7 @@ public class speedUpItem : MonoBehaviour
     public float speedMultiplier = 2;
 
     public float speedDuration = 5;
-    public float numSpeedItems = 0;
 
-
-
-    public float speedItemLevel = 1;
     public float speedItemLevelIncrease = 1.5f;
 
     private bool isSpeeding;
@@ -29,53 +25,49 @@ public class speedUpItem : MonoBehaviour
     IEnumerator Speed(GameObject player)
     {
 
-        if ((numSpeedItems > 0) && (!isSpeeding))
+        if ((singletonGameManager.Instance.numSpeedItem > 0) && (!isSpeeding))
         {
             accelerator = player.GetComponent<mattBallController>();
-            accelerator.acceleration *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
-            accelerator.maxSpeed *= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+            accelerator.acceleration *= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
+            accelerator.maxSpeed *= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
             isSpeeding = true;
-            numSpeedItems--;
+            singletonGameManager.Instance.numSpeedItem--;
         }
-        yield return new WaitForSeconds(speedDuration);
+        yield return new WaitForSeconds(speedDuration + singletonGameManager.Instance.speedItemLevel);
         isSpeeding = false;
-        accelerator.acceleration /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
-        accelerator.maxSpeed /= (speedMultiplier + (speedItemLevel * speedItemLevelIncrease));
+        accelerator.acceleration /= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
+        accelerator.maxSpeed /= (speedMultiplier + (singletonGameManager.Instance.speedItemLevel * speedItemLevelIncrease));
 
     }
 
     public void buySpeedItem()
     {
-        numSpeedItems++;
+        singletonGameManager.Instance.buySpeedItems(1);
     }
 
     public void buySpeedItem(int numItems)
     {
-        numSpeedItems += numItems;
+        singletonGameManager.Instance.buySpeedItems(numItems);
     }
 
-    public void levelUpSpeed()
+ //   public void levelUpSpeed()
+ //   {
+ //       singletonGameManager.Instance.levelUpSpeedItem(1);
+ //   }
+
+//    public void resetSpeedLevel()
+//    {
+//        singletonGameManager.Instance.resetSpeedItemLevel();
+//    }
+
+    public void levelUpSpeedDuration(int numLevels)
     {
-        speedItemLevel++;
+        singletonGameManager.Instance.levelUpSpeedItem(numLevels);
     }
 
-    public int resetSpeedLevel()
+    public void resetSpeedDuration()
     {
-        int levelsReturned = (int)speedItemLevel;
-        speedItemLevel = 0;
-        return levelsReturned;
-    }
-
-    public void levelUpSpeedDuration()
-    {
-        speedDuration++;
-    }
-
-    public int resetSpeedDuration()
-    {
-        int levelsReturned = (int)speedItemLevel;
-        speedDuration = 5;
-        return (levelsReturned - 5);
+        singletonGameManager.Instance.resetSpeedItemLevel();
     }
 
 
