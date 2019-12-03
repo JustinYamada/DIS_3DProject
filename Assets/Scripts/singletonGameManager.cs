@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -63,7 +63,6 @@ public class singletonGameManager : MonoBehaviour
             return instance;
         }
     }
-
 
 
     void Awake()
