@@ -19,6 +19,6 @@ public class HammerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(xRot, yRot, zRot) * Time.deltaTime);
+        rb.velocity = new Vector3(0,0,1);
     }
 }
