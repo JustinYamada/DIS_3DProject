@@ -12,6 +12,7 @@ public class RotatorShop : MonoBehaviour
     public float pointerY;
     public int itemId;
     [HideInInspector] public int price;
+    [HideInInspector] public int upgradePrice;
 
     public TextMeshProUGUI priceText;
 
@@ -21,64 +22,66 @@ public class RotatorShop : MonoBehaviour
     }
     public void Start()
     {
-
-
         if (itemId == 0)
         {
             price = singletonGameManager.Instance.speedItemPrice;
+            upgradePrice = singletonGameManager.Instance.speedItemUpgradePrice;
         }
         else if (itemId == 1)
         {
             price = singletonGameManager.Instance.phaseItemPrice;
+            upgradePrice = singletonGameManager.Instance.phaseItemUpgradePrice;
         }
         else if (itemId == 2)
         {
             price = singletonGameManager.Instance.slowItemPrice;
+            upgradePrice = singletonGameManager.Instance.slowItemUpgradePrice;
         }
         else
         {
             price = singletonGameManager.Instance.jumpItemPrice;
+            upgradePrice = singletonGameManager.Instance.jumpItemUpgradePrice;
         }
         priceText.text = price + " \n Bananas";
     }
 
-    public void Buy(int num)
+    public bool Buy(int num)
     {
         if (itemId == 0)
         {
-            singletonGameManager.Instance.buySpeedItems(num);
+            return singletonGameManager.Instance.buySpeedItems(num);
         }
         else if (itemId == 1)
         {
-            singletonGameManager.Instance.buyPhaseItem(num);
+            return singletonGameManager.Instance.buyPhaseItem(num);
         }
         else if (itemId == 2)
         {
-            singletonGameManager.Instance.buySlowItem(num);
+            return singletonGameManager.Instance.buySlowItem(num);
         }
         else
         {
-            singletonGameManager.Instance.buyJumpItem(num);
+            return singletonGameManager.Instance.buyJumpItem(num);
         }
     }
 
-    public void Upgrade(int num)
+    public bool Upgrade(int num)
     {
         if (itemId == 0)
         {
-            singletonGameManager.Instance.levelUpSpeedItem(num);
+            return singletonGameManager.Instance.levelUpSpeedItem(num);
         }
         else if (itemId == 1)
         {
-            singletonGameManager.Instance.levelUpPhaseItem(num);
+            return singletonGameManager.Instance.levelUpPhaseItem(num);
         }
         else if (itemId == 2)
         {
-            singletonGameManager.Instance.levelUpSlowItem(num);
+            return singletonGameManager.Instance.levelUpSlowItem(num);
         }
         else
         {
-            singletonGameManager.Instance.levelUpJumpItem(num);
+            return singletonGameManager.Instance.levelUpJumpItem(num);
         }
     }
 }
