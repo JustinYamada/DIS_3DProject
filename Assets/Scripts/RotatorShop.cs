@@ -24,19 +24,19 @@ public class RotatorShop : MonoBehaviour
     {
         if (itemId == 0)
         {
-            priceText.text = singletonGameManager.instance.speedItemPrice + " \n Bananas";
+            priceText.text = singletonGameManager.Instance.speedItemPrice + " \n Bananas";
         }
         else if (itemId == 1)
         {
-            priceText.text = singletonGameManager.instance.phaseItemPrice + " \n Bananas";
+            priceText.text = singletonGameManager.Instance.phaseItemPrice + " \n Bananas";
         }
         else if (itemId == 2)
         {
-            priceText.text = singletonGameManager.instance.slowItemPrice + " \n Bananas";
+            priceText.text = singletonGameManager.Instance.slowItemPrice + " \n Bananas";
         }
         else
         {
-            priceText.text = singletonGameManager.instance.jumpItemPrice + " \n Bananas";
+            priceText.text = singletonGameManager.Instance.jumpItemPrice + " \n Bananas";
         }
     }
 }
