@@ -92,7 +92,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.20659491, g: 0.18796726, b: 0.6226415, a: 1}
+    - _Color: {r: 0.091313645, g: 0.14006086, b: 0.7169812, a: 1}
     - _DissolveColor: {r: 0, g: 0.95000005, b: 1, a: 1}
     - _EdgeColour1: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColour2: {r: 1, g: 1, b: 1, a: 1}

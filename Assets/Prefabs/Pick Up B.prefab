@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3977226383472741543}
   - component: {fileID: 3977226383472741542}
   - component: {fileID: 3288278695820106199}
+  - component: {fileID: -9076884577993579645}
   m_Layer: 0
   m_Name: Pick Up B
   m_TagString: Pick Up
@@ -102,7 +103,7 @@ MeshCollider:
   m_GameObject: {fileID: 3977226383472741528}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756a61c5dc4da354ab94f39c61f0af16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &-9076884577993579645
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3977226383472741528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.01
+  m_Center: {x: 0.00015009407, y: -0.0002945242, z: -0.00015336747}
