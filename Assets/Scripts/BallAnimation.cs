@@ -21,7 +21,8 @@ public class BallAnimation : MonoBehaviour
     void Update()
     {
         Debug.Log(rb.velocity.x +" || "+ rb.velocity.z + " || " );
-        gameObject.transform.up = new Vector3(rb.velocity.x/10, 0, rb.velocity.z/10);
+        Vector3 sphereRotation = gameObject.transform.up + new Vector3(rb.velocity.x, 0 , rb.velocity.z);
+        gameObject.transform.Rotate(sphereRotation);
         gameObject.transform.position = actualBall.transform.position;
         if (rb.velocity.magnitude > runVelocity)
         {
