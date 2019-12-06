@@ -12,7 +12,6 @@ public class RotatorShop : MonoBehaviour
 
     public float pointerY;
     public int itemId;
-    [HideInInspector] public int price;
 
     public TextMeshProUGUI priceText;
 
@@ -26,61 +25,19 @@ public class RotatorShop : MonoBehaviour
     {
         if (itemId == 0)
         {
-            price = singletonGameManager.Instance.speedItemPrice;
-            priceText.text = price + " \n Bananas";
+            priceText.text = singletonGameManager.Instance.speedItemPrice + " \n Bananas";
         }
         else if (itemId == 1)
         {
-            price = singletonGameManager.Instance.phaseItemPrice;
+            priceText.text = singletonGameManager.Instance.phaseItemPrice + " \n Bananas";
         }
         else if (itemId == 2)
         {
-            price = singletonGameManager.Instance.slowItemPrice;
+            priceText.text = singletonGameManager.Instance.slowItemPrice + " \n Bananas";
         }
         else
         {
-            price = singletonGameManager.Instance.jumpItemPrice;
-        }
-        priceText.text = price + " \n Bananas";
-    }
-
-    public void Buy(int num)
-    {
-        if (itemId == 0)
-        {
-            singletonGameManager.Instance.buySpeedItems(num);
-        }
-        else if (itemId == 1)
-        {
-            singletonGameManager.Instance.buyPhaseItem(num);
-        }
-        else if (itemId == 2)
-        {
-            singletonGameManager.Instance.buySlowItem(num);
-        }
-        else
-        {
-            singletonGameManager.Instance.buyJumpItem(num);
-        }
-    }
-
-    public void Upgrade(int num)
-    {
-        if (itemId == 0)
-        {
-            singletonGameManager.Instance.levelUpSpeedItem(num);
-        }
-        else if (itemId == 1)
-        {
-            singletonGameManager.Instance.levelUpPhaseItem(num);
-        }
-        else if (itemId == 2)
-        {
-            singletonGameManager.Instance.levelUpSlowItem(num);
-        }
-        else
-        {
-            singletonGameManager.Instance.levelUpJumpItem(num);
+            priceText.text = singletonGameManager.Instance.jumpItemPrice + " \n Bananas";
         }
     }
 }
