@@ -12,6 +12,7 @@ public class RotatorShop : MonoBehaviour
 
     public float pointerY;
     public int itemId;
+    [HideInInspector] public int price;
 
     public TextMeshProUGUI priceText;
 
@@ -24,19 +25,61 @@ public class RotatorShop : MonoBehaviour
     {
         if (itemId == 0)
         {
-            priceText.text = singletonGameManager.instance.speedItemPrice + " \n Bananas";
+            price = singletonGameManager.Instance.speedItemPrice;
+            priceText.text = price + " \n Bananas";
         }
         else if (itemId == 1)
         {
-            priceText.text = singletonGameManager.instance.phaseItemPrice + " \n Bananas";
+            price = singletonGameManager.Instance.phaseItemPrice;
         }
         else if (itemId == 2)
         {
-            priceText.text = singletonGameManager.instance.slowItemPrice + " \n Bananas";
+            price = singletonGameManager.Instance.slowItemPrice;
         }
         else
         {
-            priceText.text = singletonGameManager.instance.jumpItemPrice + " \n Bananas";
+            price = singletonGameManager.Instance.jumpItemPrice;
+        }
+        priceText.text = price + " \n Bananas";
+    }
+
+    public void Buy(int num)
+    {
+        if (itemId == 0)
+        {
+            singletonGameManager.Instance.buySpeedItems(num);
+        }
+        else if (itemId == 1)
+        {
+            singletonGameManager.Instance.buyPhaseItem(num);
+        }
+        else if (itemId == 2)
+        {
+            singletonGameManager.Instance.buySlowItem(num);
+        }
+        else
+        {
+            singletonGameManager.Instance.buyJumpItem(num);
+        }
+    }
+
+    public void Upgrade(int num)
+    {
+        if (itemId == 0)
+        {
+            singletonGameManager.Instance.levelUpSpeedItem(num);
+        }
+        else if (itemId == 1)
+        {
+            singletonGameManager.Instance.levelUpPhaseItem(num);
+        }
+        else if (itemId == 2)
+        {
+            singletonGameManager.Instance.levelUpSlowItem(num);
+        }
+        else
+        {
+            singletonGameManager.Instance.levelUpJumpItem(num);
         }
     }
 }
