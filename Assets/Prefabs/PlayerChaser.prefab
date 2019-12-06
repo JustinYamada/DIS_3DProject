@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceforce: 3
+  changeScale: 1
 --- !u!54 &6643855858617384017
 Rigidbody:
   m_ObjectHideFlags: 0

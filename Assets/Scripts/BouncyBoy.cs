@@ -7,6 +7,7 @@ public class BouncyBoy : MonoBehaviour
 {
 
     public float bounceforce = 3;
+    public bool changeScale = false;
 
     private Vector3 initialScale;
     private Rigidbody rb;
@@ -45,7 +46,8 @@ public class BouncyBoy : MonoBehaviour
         {
             var colContact = col.contacts[0];
 
-            StartCoroutine(Thiccen());
+            if(changeScale)
+                StartCoroutine(Thiccen());
 
             Vector3 relVel = col.relativeVelocity;
             Vector3 vel = col.rigidbody.velocity;
