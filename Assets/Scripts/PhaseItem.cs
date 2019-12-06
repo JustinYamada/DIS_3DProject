@@ -58,7 +58,7 @@ public class PhaseItem : MonoBehaviour
 
         render.material.color = holder;
         collider.enabled = true;
-        phase.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        //phase.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 
     public bool buyPhaseItem()
