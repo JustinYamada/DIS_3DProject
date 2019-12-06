@@ -165,6 +165,7 @@ public class mattBallController : MonoBehaviour
 
         if(transform.position.y < -20)
         {
+            singletonGameManager.Instance.saveEverything();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
