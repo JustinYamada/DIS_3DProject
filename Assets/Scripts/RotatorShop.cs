@@ -9,24 +9,23 @@ public class RotatorShop : MonoBehaviour
     public int xRotation;
     public int yRotation;
     public int zRotation;
-
     public float pointerY;
     public int itemId;
     [HideInInspector] public int price;
 
     public TextMeshProUGUI priceText;
 
-    void Update()
+    public void Update()
     {
         transform.Rotate(new Vector3(xRotation, yRotation, zRotation) * Time.deltaTime);
     }
-
-    private void Start()
+    public void Start()
     {
+
+
         if (itemId == 0)
         {
             price = singletonGameManager.Instance.speedItemPrice;
-            priceText.text = price + " \n Bananas";
         }
         else if (itemId == 1)
         {
