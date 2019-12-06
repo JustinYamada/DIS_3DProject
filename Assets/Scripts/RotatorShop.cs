@@ -16,6 +16,7 @@ public class RotatorShop : MonoBehaviour
 
     public TextMeshProUGUI priceText;
 
+    //XD
     void Update()
     {
         transform.Rotate(new Vector3(xRotation, yRotation, zRotation) * Time.deltaTime);
