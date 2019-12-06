@@ -22,7 +22,10 @@ public class BouncyBoy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector3.zero;
+
+        if(rb != null)
+            rb.velocity = Vector3.zero;
+
         Vector3 lp = transform.localPosition;
         lp.x = -0.5f;
         lp.y = 0.0f;
