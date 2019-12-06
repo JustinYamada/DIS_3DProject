@@ -7,6 +7,8 @@ public class BouncyBoy : MonoBehaviour
 {
 
     public float bounceforce = 3;
+    public bool changeScale = false;
+    public bool playerChaser = false;
 
     private Vector3 initialScale;
     private Rigidbody rb;
@@ -21,22 +23,24 @@ public class BouncyBoy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector3.zero;
-        Vector3 lp = transform.localPosition;
-        lp.x = -0.5f;
-        lp.y = 0.0f;
-        lp.z = 0.5f;
-        transform.localPosition = lp;
+
+        if(rb != null)
+            rb.velocity = Vector3.zero;
+
+
+        if(playerChaser)
+        {
+            Vector3 lp = transform.localPosition;
+            lp.x = -0.5f;
+            lp.y = 0.0f;
+            lp.z = 0.5f;
+            transform.localPosition = lp;
+        }
     }
 
     void OnCollisionEnter(Collision col)
     {
         Bounce(col);
-    }
-
-    void OnCollisionStay(Collision col)
-    {
-        //Bounce(col);
     }
 
     void Bounce(Collision col)
@@ -45,7 +49,8 @@ public class BouncyBoy : MonoBehaviour
         {
             var colContact = col.contacts[0];
 
-            StartCoroutine(Thiccen());
+            if(changeScale)
+                StartCoroutine(Thiccen());
 
             Vector3 relVel = col.relativeVelocity;
             Vector3 vel = col.rigidbody.velocity;
