@@ -15,15 +15,17 @@ public class GiveItem : MonoBehaviour
         }
         if (items[1] != 0)
         {
-            singletonGameManager.Instance.numJumpItem += items[1];
+            singletonGameManager.Instance.numSpeedItem += items[1];
         }
         if (items[2] != 0)
         {
-            singletonGameManager.Instance.numJumpItem += items[2];
+            singletonGameManager.Instance.numSlowItem += items[2];
         }
         if (items[3] != 0)
         {
-            singletonGameManager.Instance.numJumpItem += items[3];
+            singletonGameManager.Instance.numPhaseItem += items[3];
         }
     }
+
+
 }
