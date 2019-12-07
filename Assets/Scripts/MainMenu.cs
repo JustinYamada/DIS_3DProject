@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
     public void loadStore()
     {
         singletonGameManager.Instance.saveEverything();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(16);
     }
 
     public void loadLevelsUI()

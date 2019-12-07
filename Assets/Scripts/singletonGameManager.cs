@@ -17,27 +17,27 @@ public class singletonGameManager : MonoBehaviour
 
     public int numSpeedItem = 0;
     public int speedItemLevel = 1;
-    public int speedItemUpgradePrice = 5;
-    public int speedItemPrice = 3;
+    public int speedItemUpgradePrice = 50;
+    public int speedItemPrice = 30;
     
 
 
     public int numJumpItem = 0;
     public int jumpItemLevel = 1;
-    public int jumpItemUpgradePrice = 5;
-    public int jumpItemPrice = 4;
+    public int jumpItemUpgradePrice = 50;
+    public int jumpItemPrice = 80;
 
 
     public int numPhaseItem = 0;
     public int phaseItemLevel = 1;
-    public int phaseItemUpgradePrice = 10;
-    public int phaseItemPrice = 8;
+    public int phaseItemUpgradePrice = 50;
+    public int phaseItemPrice = 30;
 
 
     public int numSlowItem = 0;
     public int slowItemLevel = 1;
-    public int slowItemUpgradePrice = 10;
-    public int slowItemPrice = 8;
+    public int slowItemUpgradePrice = 80;
+    public int slowItemPrice = 60;
 
     public int[] scores = new int[8];
 
