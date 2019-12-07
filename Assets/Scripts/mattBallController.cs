@@ -120,7 +120,7 @@ public class mattBallController : MonoBehaviour
                     break;
                 case 1:
                     print("Speed Up");
-                    speedItem.useSpeedItem(visibleBall);
+                    speedItem.useSpeedItem(gameObject);
                     break;
                 case 2:
                     print("Slow Time");
