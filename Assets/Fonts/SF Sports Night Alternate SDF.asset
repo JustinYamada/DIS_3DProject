@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: SF Sports Night Alternate SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: UNDERLAY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -83,8 +83,8 @@ Material:
     - _TextureHeight: 1024
     - _TextureWidth: 1024
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
+    - _UnderlayOffsetX: 1
+    - _UnderlayOffsetY: -1
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: SF Sports Night Alternate SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -2063424271
   material: {fileID: -7709180290156829997}
-  materialHashCode: 0
+  materialHashCode: 1661469018
   m_Version: 1.1.0
   m_SourceFontFileGUID: f5a9c102bb4ed6745aad0f4b5f8771d3
   m_SourceFontFile_EditorRef: {fileID: 0}
