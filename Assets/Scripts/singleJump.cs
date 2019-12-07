@@ -11,7 +11,7 @@ public class singleJump : MonoBehaviour
 
     public float jumpLevelIncrease = 50;
 
-    private bool isJumping = false;
+    public bool isJumping = false;
 
     public void useSingleJump(GameObject player)
     {

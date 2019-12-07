@@ -29,14 +29,13 @@ public class PlatformMove : MonoBehaviour
         goalPos.y = transform.position.y + moveDistanceUp;
 
         journeyLength = Vector3.Distance(origin, goalPos);
-        startTime = Time.time;        
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        currentFraction = ((Time.time - startTime) * movementSpeed) * singletonGameManager.Instance.slowTimeMagnitude;// / journeyLength;
+        currentFraction = ((Time.time - startTime) * movementSpeed);// / journeyLength;
 
         if (currentFraction >= 1)
         {

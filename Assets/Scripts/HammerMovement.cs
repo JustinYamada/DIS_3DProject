@@ -11,6 +11,8 @@ public class HammerMovement : MonoBehaviour
     public float direction = 1;
     private Quaternion startPos;
 
+
+    //Code taken from https://answers.unity.com/questions/1233082/swinging-object.html
     void Start()
     {
         startPos = transform.rotation;
@@ -18,7 +20,7 @@ public class HammerMovement : MonoBehaviour
     void Update()
     {
         Quaternion a = startPos;
-        a.x += (direction * (delta * Mathf.Sin(Time.time * speed))) * singletonGameManager.Instance.slowTimeMagnitude;
+        a.x += (direction * (delta * Mathf.Sin(Time.time * speed)));
         transform.rotation = a;
     }
 

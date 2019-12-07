@@ -22,7 +22,7 @@ public class ChasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = origSpeed * singletonGameManager.Instance.slowTimeMagnitude;
+        speed = origSpeed;
         agent.speed = speed;
         agent.destination = player.transform.position;
     }
