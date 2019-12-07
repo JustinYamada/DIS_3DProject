@@ -15,6 +15,8 @@ public class mattBallController : MonoBehaviour
 
     private Rigidbody ball;
 
+    public GameObject visibleBall;
+
     public followBall camera;
 
     singleJump jumpItem;
@@ -39,29 +41,11 @@ public class mattBallController : MonoBehaviour
     public GameObject green;
 
 
-    /*
-     * LOOK INTO SEPHAMORE WAIT FOR SIGNAL
-     * WHY DOES IT HAVE A 95 Millesecond processing time. It is in other in the profiler on the cpu usage
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     */
-
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        ball = GetComponent<Rigidbody>();
+        ball = visibleBall.GetComponent<Rigidbody>();
         gameObject.AddComponent<singleJump>();
         jumpItem = gameObject.GetComponent<singleJump>();
         gameObject.AddComponent<speedUpItem>();
@@ -70,14 +54,13 @@ public class mattBallController : MonoBehaviour
         phaseItem = gameObject.GetComponent<PhaseItem>();
         gameObject.AddComponent<TimeSlowItem>();
         slowItem = gameObject.GetComponent<TimeSlowItem>();
-
-        print(singletonGameManager.Instance.getNumFruit());
     }
     
 
     // Update is called once per frame
     void Update()
     {
+
         Vector3 forward = camera.directionFacing();
 
         verticalInput = Input.GetAxis("Vertical");
@@ -127,41 +110,25 @@ public class mattBallController : MonoBehaviour
             selectedIndex = 4;
         }
 
-
-        
-
-
-
         if (Input.GetKeyDown("space"))
         {
             switch (selectedIndex)
             {
                 case 0:
                     print("Jump");
-                    jumpItem.buyJumpItem();
-                    jumpItem.useSingleJump(gameObject);
+                    jumpItem.useSingleJump(visibleBall);
                     break;
                 case 1:
                     print("Speed Up");
-                    speedItem.buySpeedItem();
-                    speedItem.useSpeedItem(gameObject);
+                    speedItem.useSpeedItem(visibleBall);
                     break;
                 case 2:
                     print("Slow Time");
-                    slowItem.BuySlowItem();
-                    singletonGameManager.Instance.numSlowItem = 10;
                     slowItem.UseSlowItem();
                     break;
                 case 3:
                     print("Phase Through Obstacles");
-                    phaseItem.buyPhaseItem();
-                    phaseItem.useSinglePhase(gameObject);
-                    break;
-                case 4:
-                    print("Item 5");
-                    break;
-                case 5:
-                    print("Item 6");
+                    phaseItem.useSinglePhase(visibleBall);
                     break;
             }
 
@@ -172,6 +139,8 @@ public class mattBallController : MonoBehaviour
             singletonGameManager.Instance.saveEverything();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        gameObject.transform.position = visibleBall.transform.position;
     }
 
 
@@ -203,18 +172,14 @@ public class mattBallController : MonoBehaviour
     }
     private void turnRight()
     {
-        if (ball.angularVelocity.magnitude > -2)
-        {
-            ball.AddTorque(transform.up * torque, ForceMode.Force);
-        }
+        ball.AddTorque(transform.up * torque, ForceMode.Force);
+        gameObject.GetComponent<Rigidbody>().AddTorque(transform.up * torque, ForceMode.Force);
     }
 
     private void turnLeft()
     {
-        if (ball.angularVelocity.magnitude < 2)
-        {
-            ball.AddTorque(-transform.up * torque, ForceMode.Force);
-        }
+        ball.AddTorque(-transform.up * torque, ForceMode.Force);
+        gameObject.GetComponent<Rigidbody>().AddTorque(-transform.up * torque, ForceMode.Force);
     }
 
 
