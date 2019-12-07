@@ -35,7 +35,7 @@ public class TimeSlowItem : MonoBehaviour
             Time.fixedDeltaTime = 0.02F;
 
         }
-        yield return new WaitForSeconds(slowCoolDown);
+        yield return new WaitForSeconds(slowCoolDown/singletonGameManager.Instance.getSlowItemLevel());
         isSlow = false;
     }
 
