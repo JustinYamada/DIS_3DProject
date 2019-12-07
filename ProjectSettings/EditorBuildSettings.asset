@@ -9,15 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 69cb1efb86313de49ae7d1bf9b51347d
   - enabled: 1
-    path: Assets/Scenes/MattUnbrokenScene.unity
-    guid: 59e7126aae859d5438c245352ba48ea8
-  - enabled: 0
-    path: Assets/Scenes/OwenScene.unity
-    guid: fdc0c03e79b3d22498d02b63b05e7934
-  - enabled: 0
-    path: Assets/Scenes/MattScene.unity
-    guid: 04b4461a1a3843246a7a200c78ab21ae
-  - enabled: 1
     path: Assets/Scenes/Level1Matt.unity
     guid: 96c3a3af19f766d44b062b6ee7b27d3a
+  - enabled: 1
+    path: Assets/Scenes/Level2Matt.unity
+    guid: 5b9bdced234ad484dadc9cfa2af7e976
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel1.unity
+    guid: 87edac1f27b5b5548a11e83e13906908
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel2.unity
+    guid: 9eb46e84dd7974a43a0c2b885287cc7b
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel3.unity
+    guid: eb07a94b8804fe34ea7b3a0537967bb9
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel4.unity
+    guid: 030b640a0118dad46a9bc4a47b10104b
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel5.unity
+    guid: ff05fc6bfe056db4eb367966166590ce
+  - enabled: 1
+    path: Assets/Scenes/Spirals.unity
+    guid: b066de99779e05544be880f23c20df98
+  - enabled: 1
+    path: Assets/Scenes/TriangleScene.unity
+    guid: 1e1db4bc23380144b96e4943b67a6518
+  - enabled: 1
+    path: Assets/Scenes/Easy Levek.unity
+    guid: 7a1b91300fbc4c4408d71a58cd6ed3bb
   m_configObjects: {}

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ public class JumpPad : MonoBehaviour
 
     public float jumpForce = 750;
     public float jumpCoolDown = 4;
+    public AudioClip jumpSound;
 
     private bool justJumped = false;
 
@@ -25,6 +26,7 @@ public class JumpPad : MonoBehaviour
             justJumped = true;
             Rigidbody ball = player.gameObject.GetComponent<Rigidbody>();
             ball.AddForce(0, jumpForce, 0);
+            AudioSource.PlayClipAtPoint(jumpSound, transform.position);
             yield return new WaitForSeconds(jumpCoolDown);
             justJumped = false;
         }

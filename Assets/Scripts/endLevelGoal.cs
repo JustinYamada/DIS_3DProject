@@ -23,6 +23,11 @@ public class endLevelGoal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            if (SceneManager.GetActiveScene().buildIndex + 1 > singletonGameManager.Instance.highestLevelReached)
+            {
+                singletonGameManager.Instance.highestLevelReached = SceneManager.GetActiveScene().buildIndex + 1;
+            }
+
             singletonGameManager.Instance.saveEverything();
             SceneManager.LoadScene(0);
             print("level is over");
