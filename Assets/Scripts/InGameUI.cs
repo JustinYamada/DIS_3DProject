@@ -36,7 +36,7 @@ public class InGameUI : MonoBehaviour
         if (bananaNum != singletonGameManager.Instance.numFruit) {
             numBananas.GetComponent<TMPro.TextMeshProUGUI>().text = singletonGameManager.Instance.numFruit + " Bananas";
         }
-        time.GetComponent<TMPro.TextMeshProUGUI>().text = System.Math.Round(timer, 1) + " seconds";
+        time.GetComponent<TMPro.TextMeshProUGUI>().text = ""+ System.Math.Round(timer, 1);
         Speed.GetComponent<TMPro.TextMeshProUGUI>().text = (int)player.GetComponent<Rigidbody>().velocity.magnitude + " mph";
     }
 }
