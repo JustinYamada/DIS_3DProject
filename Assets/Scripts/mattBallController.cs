@@ -141,6 +141,7 @@ public class mattBallController : MonoBehaviour
                         AudioSource.PlayClipAtPoint(speedSound, transform.position);
                     }
                     speedItem.useSpeedItem(gameObject);
+
                     break;
                 case 2:
                     if (singletonGameManager.Instance.numSlowItem <= 0)

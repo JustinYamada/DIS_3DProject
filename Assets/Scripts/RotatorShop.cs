@@ -42,7 +42,10 @@ public class RotatorShop : MonoBehaviour
             price = singletonGameManager.Instance.jumpItemPrice;
             upgradePrice = singletonGameManager.Instance.jumpItemUpgradePrice;
         }
-        priceText.text = price + " \n Bananas";
+        if (priceText != null)
+        {
+            priceText.text = price + " \n Bananas";
+        }
     }
 
     public bool Buy(int num)
