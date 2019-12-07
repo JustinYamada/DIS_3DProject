@@ -40,6 +40,10 @@ public class mattBallController : MonoBehaviour
     public GameObject blue;
     public GameObject green;
     public AudioClip errorSound;
+    public AudioClip jumpSound;
+    public AudioClip speedSound;
+    public AudioClip slowSound;
+    public AudioClip phaseSound;
 
 
 
@@ -118,22 +122,50 @@ public class mattBallController : MonoBehaviour
                 case 0:
                     if(singletonGameManager.Instance.numJumpItem <= 0)
                     {
-
+                        AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
                     print("Jump");
+                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    {
+                        AudioSource.PlayClipAtPoint(jumpSound, transform.position);
+                    }
                     jumpItem.useSingleJump(visibleBall);
                     
                     break;
                 case 1:
+                    if (singletonGameManager.Instance.numSpeedItem <= 0)
+                    {
+                        AudioSource.PlayClipAtPoint(errorSound, transform.position);
+                    }
                     print("Speed Up");
+                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    {
+                        AudioSource.PlayClipAtPoint(speedSound, transform.position);
+                    }
                     speedItem.useSpeedItem(gameObject);
                     break;
                 case 2:
+                    if (singletonGameManager.Instance.numSlowItem <= 0)
+                    {
+                        AudioSource.PlayClipAtPoint(errorSound, transform.position);
+                    }
                     print("Slow Time");
+                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    {
+                        AudioSource.PlayClipAtPoint(slowSound, transform.position);
+                    }
                     slowItem.UseSlowItem();
                     break;
                 case 3:
+                    if (singletonGameManager.Instance.numPhaseItem <= 0)
+                    {
+                        AudioSource.PlayClipAtPoint(errorSound, transform.position);
+                    }
                     print("Phase Through Obstacles");
+                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    {
+                        AudioSource.PlayClipAtPoint(phaseSound, transform.position);
+                    }
                     phaseItem.useSinglePhase(visibleBall);
                     break;
             }
