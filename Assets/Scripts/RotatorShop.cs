@@ -11,8 +11,8 @@ public class RotatorShop : MonoBehaviour
     public int zRotation;
     public float pointerY;
     public int itemId;
-    [HideInInspector] public int price;
-    [HideInInspector] public int upgradePrice;
+    public int price;
+    public int upgradePrice;
 
     public TextMeshProUGUI priceText;
 
@@ -24,28 +24,29 @@ public class RotatorShop : MonoBehaviour
     {
         if (itemId == 0)
         {
-            price = singletonGameManager.Instance.speedItemPrice;
-            upgradePrice = singletonGameManager.Instance.speedItemUpgradePrice;
+           //price = singletonGameManager.Instance.speedItemPrice;
+            //upgradePrice = singletonGameManager.Instance.speedItemUpgradePrice;
         }
         else if (itemId == 1)
         {
-            price = singletonGameManager.Instance.phaseItemPrice;
-            upgradePrice = singletonGameManager.Instance.phaseItemUpgradePrice;
+            //price = singletonGameManager.Instance.phaseItemPrice;
+            //upgradePrice = singletonGameManager.Instance.phaseItemUpgradePrice;
         }
         else if (itemId == 2)
         {
-            price = singletonGameManager.Instance.slowItemPrice;
-            upgradePrice = singletonGameManager.Instance.slowItemUpgradePrice;
+            //price = singletonGameManager.Instance.slowItemPrice;
+            //upgradePrice = singletonGameManager.Instance.slowItemUpgradePrice;
         }
         else
         {
-            price = singletonGameManager.Instance.jumpItemPrice;
-            upgradePrice = singletonGameManager.Instance.jumpItemUpgradePrice;
+            //price = singletonGameManager.Instance.jumpItemPrice;
+           //upgradePrice = singletonGameManager.Instance.jumpItemUpgradePrice;
         }
         if (priceText != null)
         {
-            priceText.text = price + " \n Bananas";
+            //nothing
         }
+        priceText.text = price + " \n Bananas";
     }
 
     public bool Buy(int num)

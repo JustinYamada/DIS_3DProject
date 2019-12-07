@@ -397,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   ball: {fileID: 0}
+  shopCanvas: {fileID: 0}
 --- !u!1 &173868488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1756,16 @@ PrefabInstance:
       propertyPath: priceText
       value: 
       objectReference: {fileID: 2023449143}
+    - target: {fileID: 3363245102284935054, guid: b9327980e6f31c644af107e3ce8f9ef4,
+        type: 3}
+      propertyPath: price
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3363245102284935054, guid: b9327980e6f31c644af107e3ce8f9ef4,
+        type: 3}
+      propertyPath: upgradePrice
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9327980e6f31c644af107e3ce8f9ef4, type: 3}
 --- !u!1 &873160578
@@ -1814,7 +1825,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '50
+  m_text: '10
 
     Bananas'
   m_isRightToLeft: 0
@@ -2360,6 +2371,16 @@ PrefabInstance:
       propertyPath: priceText
       value: 
       objectReference: {fileID: 873160580}
+    - target: {fileID: -1436681962982097436, guid: 9dcfd11471595ac43babab38fe137010,
+        type: 3}
+      propertyPath: price
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -1436681962982097436, guid: 9dcfd11471595ac43babab38fe137010,
+        type: 3}
+      propertyPath: upgradePrice
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcfd11471595ac43babab38fe137010, type: 3}
 --- !u!4 &1003584685 stripped
@@ -2722,7 +2743,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'x
+  m_text: '10
 
     Bananas'
   m_isRightToLeft: 0
@@ -2794,7 +2815,7 @@ MonoBehaviour:
   m_margin: {x: 0.0031995752, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1132446827}
-    characterCount: 9
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -2921,7 +2942,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3482
+  m_Name: pb_Mesh-26284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3290,7 +3311,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '100
+  m_text: '10
 
     Bananas'
   m_isRightToLeft: 0
@@ -3362,7 +3383,7 @@ MonoBehaviour:
   m_margin: {x: 0.0031995752, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1464991298}
-    characterCount: 11
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -4191,7 +4212,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '75
+  m_text: '10
+
 
     Bananas'
   m_isRightToLeft: 0
@@ -4263,12 +4285,12 @@ MonoBehaviour:
   m_margin: {x: 0.0031995752, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2023449143}
-    characterCount: 10
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
-    lineCount: 2
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4370,6 +4392,16 @@ PrefabInstance:
         type: 3}
       propertyPath: zRotation
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 267328892930670819, guid: 04bb185b1d74dcc48a0706af753bb597,
+        type: 3}
+      propertyPath: price
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 267328892930670819, guid: 04bb185b1d74dcc48a0706af753bb597,
+        type: 3}
+      propertyPath: upgradePrice
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04bb185b1d74dcc48a0706af753bb597, type: 3}
@@ -4789,6 +4821,16 @@ PrefabInstance:
       propertyPath: priceText
       value: 
       objectReference: {fileID: 1464991298}
+    - target: {fileID: -9184320924459689348, guid: 0163875ec32032e4e8a8c02e20617fbf,
+        type: 3}
+      propertyPath: price
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -9184320924459689348, guid: 0163875ec32032e4e8a8c02e20617fbf,
+        type: 3}
+      propertyPath: upgradePrice
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0163875ec32032e4e8a8c02e20617fbf, type: 3}
 --- !u!1 &7455207230292712499 stripped

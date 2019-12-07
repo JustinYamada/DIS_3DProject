@@ -36,11 +36,17 @@ public class PointerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space))
         {
-            purchaseText.text = "Do you want to purchase the "+ itemArray[itemIndex].name+ " for " + itemArray[itemIndex].GetComponent<RotatorShop>().price + " Bananas? \n" +
+            purchaseText.text = "Do you want to purchase the " + itemArray[itemIndex].name + " for " + itemArray[itemIndex].GetComponent<RotatorShop>().price + " Bananas? \n" +
                                 "Or upgrade it for " + itemArray[itemIndex].GetComponent<RotatorShop>().upgradePrice + " Bananas?";
+
+            //purchaseText.text = "Do you want to purchase the " + itemArray[itemIndex].name + " for " + 50 + " Bananas? \n" +
+            //                    "Or upgrade it for " + 50 + " Bananas?";
+
             purchaseUI.SetActive(true);
         }
         purchaseUI.GetComponent<PurchaseUI>().SetPurchaseObject(itemArray[itemIndex]);
+
+
     }
 
     public void ChangeActivePurchaseUI()

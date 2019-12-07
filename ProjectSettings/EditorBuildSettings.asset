@@ -9,17 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 69cb1efb86313de49ae7d1bf9b51347d
   - enabled: 1
-    path: Assets/Scenes/Level1Matt.unity
-    guid: 96c3a3af19f766d44b062b6ee7b27d3a
+    path: Assets/Scenes/First Level.unity
+    guid: 7a1b91300fbc4c4408d71a58cd6ed3bb
   - enabled: 1
-    path: Assets/Scenes/Level2Matt.unity
-    guid: 5b9bdced234ad484dadc9cfa2af7e976
+    path: Assets/Scenes/jumpPadIntro.unity
+    guid: a54dc0b5cce79bd4194e015e410c80b9
   - enabled: 1
-    path: Assets/Scenes/OwenLevel1.unity
-    guid: 87edac1f27b5b5548a11e83e13906908
+    path: Assets/Scenes/speedPadIntro.unity
+    guid: 45924e57635d14345be3aa449ebec626
   - enabled: 1
-    path: Assets/Scenes/OwenLevel2.unity
-    guid: 9eb46e84dd7974a43a0c2b885287cc7b
+    path: Assets/Scenes/phaseItemIntro.unity
+    guid: 9f55bf1286f6c3441918f8c1e31a1692
+  - enabled: 1
+    path: Assets/Scenes/SlowDown.unity
+    guid: f8f69732849a9094aaa5cd1e661bf14b
   - enabled: 1
     path: Assets/Scenes/OwenLevel3.unity
     guid: eb07a94b8804fe34ea7b3a0537967bb9
@@ -27,15 +30,30 @@ EditorBuildSettings:
     path: Assets/Scenes/OwenLevel4.unity
     guid: 030b640a0118dad46a9bc4a47b10104b
   - enabled: 1
+    path: Assets/Scenes/TriangleScene.unity
+    guid: 1e1db4bc23380144b96e4943b67a6518
+  - enabled: 1
+    path: Assets/Scenes/HammerTime.unity
+    guid: 4e6b8d1d260848545b44bd04afd01581
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel2.unity
+    guid: 9eb46e84dd7974a43a0c2b885287cc7b
+  - enabled: 1
+    path: Assets/Scenes/Level2Matt.unity
+    guid: 5b9bdced234ad484dadc9cfa2af7e976
+  - enabled: 1
     path: Assets/Scenes/OwenLevel5.unity
     guid: ff05fc6bfe056db4eb367966166590ce
+  - enabled: 1
+    path: Assets/Scenes/OwenLevel1.unity
+    guid: 87edac1f27b5b5548a11e83e13906908
+  - enabled: 1
+    path: Assets/Scenes/Level1Matt.unity
+    guid: 96c3a3af19f766d44b062b6ee7b27d3a
   - enabled: 1
     path: Assets/Scenes/Spirals.unity
     guid: b066de99779e05544be880f23c20df98
   - enabled: 1
-    path: Assets/Scenes/TriangleScene.unity
-    guid: 1e1db4bc23380144b96e4943b67a6518
-  - enabled: 1
-    path: Assets/Scenes/First Level.unity
-    guid: 7a1b91300fbc4c4408d71a58cd6ed3bb
+    path: Assets/Scenes/HahnScene.unity
+    guid: 6508e111d94520248b186a63d1628248
   m_configObjects: {}
