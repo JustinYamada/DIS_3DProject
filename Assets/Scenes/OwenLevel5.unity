@@ -539,9 +539,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75611c8abcd79c4295338c379e755ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceforce: 1.4
+  bounceforce: 3
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &209126115
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -837,7 +838,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81846
+  m_Name: pb_Mesh161538
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1000,7 +1001,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-75576
+  m_Name: pb_Mesh161598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1326,7 +1327,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152624
+  m_Name: pb_Mesh161654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1618,6 +1619,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &731181663
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2242,7 +2244,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-73934
+  m_Name: pb_Mesh161676
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2675,7 +2677,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-79018
+  m_Name: pb_Mesh161624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2874,6 +2876,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &1151006853
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4302,6 +4305,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &1261893015
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4597,7 +4601,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152484
+  m_Name: pb_Mesh161514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7643,6 +7647,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &1451737259
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8270,6 +8275,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &1662971039
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8843,7 +8849,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-172564
+  m_Name: pb_Mesh-183572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9036,6 +9042,7 @@ MonoBehaviour:
   bounceforce: 1.4
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!64 &1825104387
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9331,7 +9338,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh152542
+  m_Name: pb_Mesh161572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

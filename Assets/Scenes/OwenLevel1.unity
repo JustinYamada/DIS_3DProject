@@ -1039,6 +1039,7 @@ MonoBehaviour:
   bounceforce: 0.5
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!1001 &432143093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3200,7 +3201,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh133436
+  m_Name: pb_Mesh165308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
