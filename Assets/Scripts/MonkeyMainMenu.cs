@@ -12,6 +12,7 @@ public class MonkeyMainMenu : MonoBehaviour
     public GameObject mainMenuMusic;
     public GameObject camera;
     public AudioClip ymcaSound;
+    private bool yKeyPressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,27 +48,28 @@ public class MonkeyMainMenu : MonoBehaviour
         if (Input.GetKeyDown("r"))
         {
             raymondText.text = (string) nameList[Random.Range(0, nameList.Count)];
-            mainMenuMusic.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown("y"))
         {
-            mainMenuMusic.gameObject.SetActive(false);
-            WaitCoroutine();
-            AudioSource.PlayClipAtPoint(ymcaSound, camera.transform.position);
-            
-            raymondText.text = "YMCA";
-            monkeyAnimator.SetTrigger("YMCA");
-
+            if(yKeyPressed != true)
+            {
+                yKeyPressed = true;
+                mainMenuMusic.gameObject.SetActive(false);
+                StartCoroutine(WaitCoroutine());
+                AudioSource.PlayClipAtPoint(ymcaSound, camera.transform.position);
+                raymondText.text = "YMCA";
+                monkeyAnimator.SetTrigger("YMCA");
+            }
             
         }
     }
 
     IEnumerator WaitCoroutine()
     {
-        Debug.Log("hi");
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(226.0f);
         mainMenuMusic.gameObject.SetActive(true);
+        yKeyPressed = false;
     }
 }
 
