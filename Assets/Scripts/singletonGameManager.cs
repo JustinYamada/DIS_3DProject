@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class singletonGameManager : MonoBehaviour
 {
@@ -37,7 +38,6 @@ public class singletonGameManager : MonoBehaviour
     public int slowItemLevel = 1;
     public int slowItemUpgradePrice;
     public int slowItemPrice;
-    public float slowTimeMagnitude = 1.0f;
 
     public int[] scores = new int[8];
 
@@ -111,6 +111,7 @@ public class singletonGameManager : MonoBehaviour
         if (numItems * speedItemPrice < numFruit)
         {
             numFruit -= (numItems * speedItemPrice);
+            numSpeedItem += numItems;
             return true;
         }
         return false;
@@ -150,6 +151,7 @@ public class singletonGameManager : MonoBehaviour
         if (numItems * jumpItemPrice < numFruit)
         {
             numFruit -= (numItems * jumpItemPrice);
+            numJumpItem += numItems;
             return true;
         }
         return false;
@@ -188,6 +190,7 @@ public class singletonGameManager : MonoBehaviour
         if (numItems * numPhaseItem < numFruit)
         {
             numFruit -= (numItems * numPhaseItem);
+            numPhaseItem += numItems;
             return true;
         }
         return false;
@@ -225,6 +228,7 @@ public class singletonGameManager : MonoBehaviour
         if (numItems * numSlowItem < numFruit)
         {
             numFruit -= (numItems * numSlowItem);
+            numSlowItem += numItems;
             return true;
         }
         return false;

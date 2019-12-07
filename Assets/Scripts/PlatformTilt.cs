@@ -40,7 +40,7 @@ public class PlatformTilt : MonoBehaviour
 
         if (!tilting)
         {
-            tiltTime = origTiltTime / singletonGameManager.Instance.slowTimeMagnitude;
+            tiltTime = origTiltTime;
             StartCoroutine(Tilt());
         }
 

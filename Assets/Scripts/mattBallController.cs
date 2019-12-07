@@ -120,8 +120,7 @@ public class mattBallController : MonoBehaviour
                     {
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
-                    print("Jump");
-                    if (singletonGameManager.Instance.numPhaseItem >= 1)
+                    else if (singletonGameManager.Instance.numJumpItem >= 1 && !jumpItem.isJumping)
                     {
                         AudioSource.PlayClipAtPoint(jumpSound, transform.position);
                     }
@@ -133,8 +132,7 @@ public class mattBallController : MonoBehaviour
                     {
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
-                    print("Speed Up");
-                    if (singletonGameManager.Instance.numPhaseItem >= 1)
+                    else if (singletonGameManager.Instance.numSpeedItem >= 1 && !phaseItem.isPhasing)
                     {
                         AudioSource.PlayClipAtPoint(speedSound, transform.position);
                     }
@@ -146,8 +144,7 @@ public class mattBallController : MonoBehaviour
                     {
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
-                    print("Slow Time");
-                    if (singletonGameManager.Instance.numPhaseItem >= 1)
+                    else if (singletonGameManager.Instance.numSlowItem >= 1 && !slowItem.isSlow)
                     {
                         AudioSource.PlayClipAtPoint(slowSound, transform.position);
                     }
@@ -158,8 +155,7 @@ public class mattBallController : MonoBehaviour
                     {
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
-                    print("Phase Through Obstacles");
-                    if (singletonGameManager.Instance.numPhaseItem >= 1)
+                    else if (singletonGameManager.Instance.numPhaseItem >= 1 && !phaseItem.isPhasing)
                     {
                         AudioSource.PlayClipAtPoint(phaseSound, transform.position);
                     }

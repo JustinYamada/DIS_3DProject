@@ -20,7 +20,7 @@ public class HammerMovement : MonoBehaviour
     void Update()
     {
         Quaternion a = startPos;
-        a.x += (direction * (delta * Mathf.Sin(Time.time * speed))) * singletonGameManager.Instance.slowTimeMagnitude;
+        a.x += (direction * (delta * Mathf.Sin(Time.time * speed)));
         transform.rotation = a;
     }
 
