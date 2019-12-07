@@ -645,7 +645,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh147544
+  m_Name: pb_Mesh-284368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1697,6 +1697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceforce: 0.5
+  changeScale: 0
+  playerChaser: 0
 --- !u!1001 &1705739339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1712,7 +1714,7 @@ PrefabInstance:
     - target: {fileID: 6643855858227420388, guid: 4b0760cb754283043b53c2ae3c508a19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.19
+      value: -9.12
       objectReference: {fileID: 0}
     - target: {fileID: 6643855858227420388, guid: 4b0760cb754283043b53c2ae3c508a19,
         type: 3}
@@ -1722,7 +1724,7 @@ PrefabInstance:
     - target: {fileID: 6643855858227420388, guid: 4b0760cb754283043b53c2ae3c508a19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.19
+      value: 15.64
       objectReference: {fileID: 0}
     - target: {fileID: 6643855858227420388, guid: 4b0760cb754283043b53c2ae3c508a19,
         type: 3}

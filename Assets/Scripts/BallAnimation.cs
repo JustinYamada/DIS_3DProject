@@ -10,6 +10,7 @@ public class BallAnimation : MonoBehaviour
     private Animator monkeyAnimator;
     public int runVelocity;
     public int walkVelocity;
+    private Vector3 sphereRotation = new Vector3(0, 0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,9 @@ public class BallAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rb.velocity.x +" || "+ rb.velocity.z + " || " );
-        Vector3 sphereRotation = gameObject.transform.up + new Vector3(rb.velocity.x, 0 , rb.velocity.z);
-        gameObject.transform.Rotate(sphereRotation);
-        gameObject.transform.position = actualBall.transform.position;
+        //Debug.Log(rb.velocity.x +" || "+ rb.velocity.z + " || " );
+        /*Vector3.RotateTowards(sphereRotation,rb.velocity,Mathf.Infinity, Mathf.Infinity);
+        gameObject.transform.Rotate(sphereRotation);*/
         if (rb.velocity.magnitude > runVelocity)
         {
             monkeyAnimator.SetBool("isMovingFast", true);
