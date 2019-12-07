@@ -35,7 +35,15 @@ public class BossScript : MonoBehaviour
 
     void FireTheBounce()
     {
-        AudioSource.PlayClipAtPoint(bossSound, transform.position);
+        AudioSource.PlayClipAtPoint(bossSound, player.transform.position);
+        StartCoroutine(WaitCoroutine());
+    }
+
+    
+
+    IEnumerator WaitCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
         Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), Quaternion.identity);
     }
 

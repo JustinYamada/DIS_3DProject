@@ -13,21 +13,17 @@ public class ProjectileShooter : MonoBehaviour
     public Vector3 direction;
     public GameObject player;
     Vector3 startPos;
-    public Rigidbody rb;
 
 
     void Start()
     {
         startPos = transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody>();
         direction = player.transform.position;
     }
 
     void Update()
     {
-
-        Debug.Log(direction);
         transform.position = Vector3.Lerp(startPos, direction, (3- lifeTime)/3);
 
         lifeTime -= Time.unscaledDeltaTime;

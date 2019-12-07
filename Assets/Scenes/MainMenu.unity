@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLoaded: 0
-  highestLevelReached: 0
+  highestLevelReached: 1
   numFruit: 0
   numSpeedItem: 0
   speedItemLevel: 1
@@ -325,6 +325,7 @@ MonoBehaviour:
   slowItemLevel: 1
   slowItemUpgradePrice: 0
   slowItemPrice: 0
+  slowTimeMagnitude: 1
   scores: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &138351554
 Transform:

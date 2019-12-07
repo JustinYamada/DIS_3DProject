@@ -12,6 +12,7 @@ public class BouncyBoy : MonoBehaviour
 
     private Vector3 initialScale;
     private Rigidbody rb;
+    public AudioClip bounceSound;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class BouncyBoy : MonoBehaviour
     {
         if (col != null && col.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(bounceSound, transform.position);
             var colContact = col.contacts[0];
 
             if(changeScale)

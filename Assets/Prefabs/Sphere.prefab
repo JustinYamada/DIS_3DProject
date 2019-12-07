@@ -110,6 +110,7 @@ MonoBehaviour:
   bounceforce: 5
   changeScale: 0
   playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!54 &-8937145083288587885
 Rigidbody:
   m_ObjectHideFlags: 0
