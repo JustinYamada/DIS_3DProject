@@ -804,7 +804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &523985902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,11 +1691,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720537944}
     m_Modifications:
-    - target: {fileID: 8215469190151875513, guid: b9327980e6f31c644af107e3ce8f9ef4,
-        type: 3}
-      propertyPath: m_Name
-      value: Pass-Through Pear
-      objectReference: {fileID: 0}
     - target: {fileID: 1215989355031966951, guid: b9327980e6f31c644af107e3ce8f9ef4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1750,6 +1745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215469190151875513, guid: b9327980e6f31c644af107e3ce8f9ef4,
+        type: 3}
+      propertyPath: m_Name
+      value: Pass-Through Pear
       objectReference: {fileID: 0}
     - target: {fileID: 3363245102284935054, guid: b9327980e6f31c644af107e3ce8f9ef4,
         type: 3}
@@ -1987,8 +1987,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Do you want to purchase the -- for X Bananas?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b7e3488618dae104890bf92aec6e875b, type: 2}
+  m_sharedMaterial: {fileID: -1570610828679442703, guid: b7e3488618dae104890bf92aec6e875b,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2013,8 +2014,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.09
-  m_fontSizeBase: 0.09
+  m_fontSize: 0.105
+  m_fontSizeBase: 0.105
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2306,11 +2307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720537944}
     m_Modifications:
-    - target: {fileID: 4123292039082323602, guid: 9dcfd11471595ac43babab38fe137010,
-        type: 3}
-      propertyPath: m_Name
-      value: Acceleration Apple
-      objectReference: {fileID: 0}
     - target: {fileID: 3902838919155898830, guid: 9dcfd11471595ac43babab38fe137010,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2365,6 +2361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123292039082323602, guid: 9dcfd11471595ac43babab38fe137010,
+        type: 3}
+      propertyPath: m_Name
+      value: Acceleration Apple
       objectReference: {fileID: 0}
     - target: {fileID: -1436681962982097436, guid: 9dcfd11471595ac43babab38fe137010,
         type: 3}
@@ -3997,6 +3998,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863725739}
   m_CullTransparentMesh: 0
+--- !u!1001 &1966855004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4229633510143084355, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_Name
+      value: MenuSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.62561893
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.65395045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.395248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229633510143084357, guid: 517404febac341e449944502ead46d8f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 517404febac341e449944502ead46d8f, type: 3}
 --- !u!1 &1990664525
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,11 +4393,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720537944}
     m_Modifications:
-    - target: {fileID: 7260797985420821219, guid: 04bb185b1d74dcc48a0706af753bb597,
-        type: 3}
-      propertyPath: m_Name
-      value: Jump Fruit
-      objectReference: {fileID: 0}
     - target: {fileID: 683905476850222878, guid: 04bb185b1d74dcc48a0706af753bb597,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4382,6 +4447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260797985420821219, guid: 04bb185b1d74dcc48a0706af753bb597,
+        type: 3}
+      propertyPath: m_Name
+      value: Jump Fruit
       objectReference: {fileID: 0}
     - target: {fileID: 267328892930670819, guid: 04bb185b1d74dcc48a0706af753bb597,
         type: 3}
@@ -4543,11 +4613,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720537944}
     m_Modifications:
-    - target: {fileID: 4398641829460641456, guid: 278906a95cdf96841ab653e5ad6712fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Pointer
-      objectReference: {fileID: 0}
     - target: {fileID: 4398641829460641467, guid: 278906a95cdf96841ab653e5ad6712fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4603,12 +4668,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180.00002
       objectReference: {fileID: 0}
-    - target: {fileID: 4398641829460641468, guid: 278906a95cdf96841ab653e5ad6712fb,
+    - target: {fileID: 4398641829460641456, guid: 278906a95cdf96841ab653e5ad6712fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Pointer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398641829460641471, guid: 278906a95cdf96841ab653e5ad6712fb,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1201914761}
-    - target: {fileID: 4398641829460641471, guid: 278906a95cdf96841ab653e5ad6712fb,
+    - target: {fileID: 4398641829460641468, guid: 278906a95cdf96841ab653e5ad6712fb,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4756,11 +4826,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1720537944}
     m_Modifications:
-    - target: {fileID: 6170559181362499728, guid: 0163875ec32032e4e8a8c02e20617fbf,
-        type: 3}
-      propertyPath: m_Name
-      value: Slow-mo Slushie
-      objectReference: {fileID: 0}
     - target: {fileID: 7203898175574631043, guid: 0163875ec32032e4e8a8c02e20617fbf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4815,6 +4880,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6170559181362499728, guid: 0163875ec32032e4e8a8c02e20617fbf,
+        type: 3}
+      propertyPath: m_Name
+      value: Slow-mo Slushie
       objectReference: {fileID: 0}
     - target: {fileID: -9184320924459689348, guid: 0163875ec32032e4e8a8c02e20617fbf,
         type: 3}
