@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         singletonGameManager.Instance.saveEverything();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(singletonGameManager.Instance.highestLevelReached);
     }
 
     public void QuitGame()

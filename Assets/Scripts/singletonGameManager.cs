@@ -14,7 +14,6 @@ public class singletonGameManager : MonoBehaviour
 
     public int numFruit;
 
-
     public int numSpeedItem = 0;
     public int speedItemLevel = 1;
     public int speedItemUpgradePrice;
