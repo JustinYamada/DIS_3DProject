@@ -118,10 +118,6 @@ public class singletonGameManager : MonoBehaviour
     }
 
 
-
-
-
-
     public int getNumJumpItems()
     {
         return numJumpItem;
@@ -409,6 +405,32 @@ public class singletonGameManager : MonoBehaviour
             }
         }
     }
+
+    public void resetEverything()
+    {
+        PlayerPrefs.SetInt("highestLevelReached", 1);
+        PlayerPrefs.SetInt("numFruit", 0);
+        PlayerPrefs.SetInt("numSpeedItem", 0);
+        PlayerPrefs.SetInt("speedItemLevel", 1);
+        PlayerPrefs.SetInt("numJumpItem", 0);
+        PlayerPrefs.SetInt("jumpItemLevel", 1);
+        PlayerPrefs.SetInt("numPhaseItem", 0);
+        PlayerPrefs.SetInt("phaseItemLevel", 1);
+        PlayerPrefs.SetInt("numSlowItem", 0);
+        PlayerPrefs.SetInt("slowItemLevel", 1);
+
+        PlayerPrefs.SetInt("score0", 0);
+        PlayerPrefs.SetInt("score1", 0);
+        PlayerPrefs.SetInt("score2", 0);
+        PlayerPrefs.SetInt("score3", 0);
+        PlayerPrefs.SetInt("score4", 0);
+        PlayerPrefs.SetInt("score5", 0);
+        PlayerPrefs.SetInt("score6", 0);
+        PlayerPrefs.SetInt("score7", 0);
+        PlayerPrefs.Save();
+        loadEverything();
+    }
+
 
     public bool hasKey(string key)
     {
