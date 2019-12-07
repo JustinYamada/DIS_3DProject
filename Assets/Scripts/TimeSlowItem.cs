@@ -7,7 +7,7 @@ public class TimeSlowItem : MonoBehaviour
     public float slowCoolDown = 10.0f;
     public float slowTimeDuration = 5.0f;
 
-    private bool isSlow;
+    public bool isSlow;
 
     // Start is called before the first frame update
     void Start()
