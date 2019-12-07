@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject ball;
+    public GameObject shopCanvas;
 
     // Update is called once per frame
 
@@ -39,7 +40,14 @@ public class PauseMenu : MonoBehaviour
         {
             ball.GetComponent<mattBallController>().unPauseTime();
         }
-        pauseMenuUI.SetActive(false);
+        if (shopCanvas != null)
+        {
+            shopCanvas.SetActive(true);
+        }
+        if (pauseMenuUI != null)
+        {
+           pauseMenuUI.SetActive(false);
+        }
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -50,7 +58,14 @@ public class PauseMenu : MonoBehaviour
         {
             ball.GetComponent<mattBallController>().pauseTime();
         }
-        pauseMenuUI.SetActive(true);
+        if (shopCanvas != null)
+        {
+            shopCanvas.SetActive(false);
+        }
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+        }
         Time.timeScale = 0f;
         GameIsPaused = true;
 
