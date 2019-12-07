@@ -35,7 +35,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        ball.GetComponent<mattBallController>().unPauseTime();
+        if (ball != null)
+        {
+            ball.GetComponent<mattBallController>().unPauseTime();
+        }
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -43,7 +46,10 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        ball.GetComponent<mattBallController>().pauseTime();
+        if (ball != null)
+        {
+            ball.GetComponent<mattBallController>().pauseTime();
+        }
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
