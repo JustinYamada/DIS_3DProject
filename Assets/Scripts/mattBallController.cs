@@ -35,10 +35,6 @@ public class mattBallController : MonoBehaviour
 
     private float verticalInput = 0f;
     private float horizontalInput = 0f;
-
-    public GameObject red;
-    public GameObject blue;
-    public GameObject green;
     public AudioClip errorSound;
     public AudioClip jumpSound;
     public AudioClip speedSound;
@@ -232,26 +228,6 @@ public class mattBallController : MonoBehaviour
         Time.timeScale = 0f;
         print("Unpaused");
     }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "MonkIdolRed")
-        {
-            Destroy(col.gameObject);
-            Destroy(red);
-        }
-        if (col.gameObject.tag == "MonkIdolBlue")
-        {
-            Destroy(col.gameObject);
-            Destroy(blue);
-        }
-        if (col.gameObject.tag == "MonkIdolGreen")
-        {
-            Destroy(col.gameObject);
-            Destroy(green);
-        }
-    }
-
 
 
 }
