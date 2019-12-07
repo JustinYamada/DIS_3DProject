@@ -1964,10 +1964,7 @@ MonoBehaviour:
   camera: {fileID: 0}
   onGround: 1
   selectedIndex: 0
-  torque: 1
-  red: {fileID: 0}
-  blue: {fileID: 0}
-  green: {fileID: 0}
+  torque: 2
   errorSound: {fileID: 8300000, guid: 4b8fcc11e55df024da44b41a009e96ed, type: 3}
   jumpSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
   speedSound: {fileID: 8300000, guid: 13689be2703ce6e4592e0499664e198a, type: 3}
