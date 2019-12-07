@@ -36,7 +36,7 @@ public class PlatformMove : MonoBehaviour
     void Update()
     {
 
-        currentFraction = ((Time.time - startTime) * movementSpeed);// / journeyLength;
+        currentFraction = ((Time.time - startTime) * movementSpeed) * singletonGameManager.Instance.slowTimeMagnitude;// / journeyLength;
 
         if (currentFraction >= 1)
         {
