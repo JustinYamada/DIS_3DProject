@@ -13,7 +13,6 @@ public class MonkeyMainMenu : MonoBehaviour
     void Start()
     {
         monkeyAnimator = ballMonkey.GetComponent<Animator>();
-        monkeyAnimator.SetTrigger("YMCA");
         monkeyAnimator.SetBool("isMoving", true);
         monkeyAnimator.SetBool("isMovingFast", true);
         nameList.Add("Raymond");
@@ -42,6 +41,13 @@ public class MonkeyMainMenu : MonoBehaviour
         if (Input.GetKeyDown("r"))
         {
                 raymondText.text = (string) nameList[Random.Range(0, nameList.Count)];
+        }
+
+        if (Input.GetKeyDown("y"))
+        {
+            raymondText.text = "YMCA";
+            monkeyAnimator.SetTrigger("YMCA");
+            
         }
     }
 }
