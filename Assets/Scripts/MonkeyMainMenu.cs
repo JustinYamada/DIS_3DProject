@@ -26,6 +26,7 @@ public class MonkeyMainMenu : MonoBehaviour
         nameList.Add("Rick");
         nameList.Add("Ken");
         nameList.Add("Charlotte");
+        nameList.Add("Twin Peaks");
         nameList.Add("Johan");
         nameList.Add("YMCA");
         nameList.Add("#UniteGameDev");
