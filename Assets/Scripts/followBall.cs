@@ -7,7 +7,7 @@ public class followBall : MonoBehaviour
 
     public GameObject player;
 
-    public GameObject thingyMoBobber;
+    public GameObject visibleBall;
 
     private Vector3 _offset;
     float offSetAngle = 0;
@@ -53,8 +53,8 @@ public class followBall : MonoBehaviour
         offset *= distance;
 
 
-        transform.position = thingyMoBobber.transform.position + offset;
-        transform.rotation = Quaternion.LookRotation(thingyMoBobber.transform.position - transform.position, new Vector3(0, 1, 0));
+        transform.position = visibleBall.transform.position + offset;
+        transform.rotation = Quaternion.LookRotation(visibleBall.transform.position - transform.position, new Vector3(0, 1, 0));
 
 
 
