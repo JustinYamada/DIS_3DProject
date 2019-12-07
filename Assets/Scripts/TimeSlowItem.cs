@@ -27,10 +27,12 @@ public class TimeSlowItem : MonoBehaviour
         {
             isSlow = true;
             print("slowed!");
-            singletonGameManager.Instance.slowTimeMagnitude = 0.25f;
             singletonGameManager.Instance.numSlowItem--;
+            Time.timeScale = 0.5f;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
             yield return new WaitForSeconds(slowTimeDuration);
-            singletonGameManager.Instance.slowTimeMagnitude = 1.0f;
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02F;
 
         }
         yield return new WaitForSeconds(slowCoolDown);

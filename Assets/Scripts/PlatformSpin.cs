@@ -24,7 +24,7 @@ public class PlatformSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spinForce = origSpinForce * singletonGameManager.Instance.slowTimeMagnitude;
+        spinForce = origSpinForce;
 
         if (spinAxis == 0)
         {
