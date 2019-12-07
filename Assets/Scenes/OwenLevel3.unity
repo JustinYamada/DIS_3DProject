@@ -476,6 +476,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1480390511}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &130520144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6643855858617384031, guid: 4b0760cb754283043b53c2ae3c508a19,
+    type: 3}
+  m_PrefabInstance: {fileID: 1705739339}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &130520146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130520144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75611c8abcd79c4295338c379e755ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceforce: 3
+  changeScale: 0
+  playerChaser: 0
+  bounceSound: {fileID: 8300000, guid: b15f21304da13e543aef3370b41776d8, type: 3}
 --- !u!4 &150383969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3685314287107489506, guid: 29a6cb610a55f474a9d4a382e7939c87,
@@ -1301,7 +1323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-150914
+  m_Name: pb_Mesh-239174
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3110,7 +3132,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ab785cd6cc0f5124cbe881d578fa187b, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6643855858617384016, guid: 4b0760cb754283043b53c2ae3c508a19, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b0760cb754283043b53c2ae3c508a19, type: 3}
 --- !u!1001 &1825744707
 PrefabInstance:
