@@ -125,7 +125,7 @@ public class mattBallController : MonoBehaviour
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
                     print("Jump");
-                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    if (singletonGameManager.Instance.numPhaseItem >= 1)
                     {
                         AudioSource.PlayClipAtPoint(jumpSound, transform.position);
                     }
@@ -138,7 +138,7 @@ public class mattBallController : MonoBehaviour
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
                     print("Speed Up");
-                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    if (singletonGameManager.Instance.numPhaseItem >= 1)
                     {
                         AudioSource.PlayClipAtPoint(speedSound, transform.position);
                     }
@@ -150,7 +150,7 @@ public class mattBallController : MonoBehaviour
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
                     print("Slow Time");
-                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    if (singletonGameManager.Instance.numPhaseItem >= 1)
                     {
                         AudioSource.PlayClipAtPoint(slowSound, transform.position);
                     }
@@ -162,7 +162,7 @@ public class mattBallController : MonoBehaviour
                         AudioSource.PlayClipAtPoint(errorSound, transform.position);
                     }
                     print("Phase Through Obstacles");
-                    if (singletonGameManager.Instance.numPhaseItem <= 1)
+                    if (singletonGameManager.Instance.numPhaseItem >= 1)
                     {
                         AudioSource.PlayClipAtPoint(phaseSound, transform.position);
                     }
