@@ -8,7 +8,7 @@ public class PhaseItem : MonoBehaviour
     public float phaseTime = 5;
     public float phaseTimeIncrease = .5f;
 
-    private bool isPhasing = false;
+    public bool isPhasing = false;
     private GameObject[] phasable;
 
     private void Start()
