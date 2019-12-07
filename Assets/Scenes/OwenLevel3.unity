@@ -442,11 +442,36 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.b
       value: 0.40294814
       objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfcfeb86eece39478960c9c7bd28661, type: 3}
 --- !u!1 &63442647 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5694466401963897400, guid: 8bfcfeb86eece39478960c9c7bd28661,
+  m_CorrespondingSourceObject: {fileID: 2472128538656728846, guid: 8bfcfeb86eece39478960c9c7bd28661,
     type: 3}
   m_PrefabInstance: {fileID: 63442646}
   m_PrefabAsset: {fileID: 0}
@@ -1466,7 +1491,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69342
+  m_Name: pb_Mesh174280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

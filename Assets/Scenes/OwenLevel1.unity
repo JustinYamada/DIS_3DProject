@@ -338,12 +338,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 199726597}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &205995485 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5694466401963897400, guid: 8bfcfeb86eece39478960c9c7bd28661,
-    type: 3}
-  m_PrefabInstance: {fileID: 1561685042}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &235150958
 Mesh:
   m_ObjectHideFlags: 0
@@ -7240,8 +7234,39 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694466401963897402, guid: 8bfcfeb86eece39478960c9c7bd28661,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bfcfeb86eece39478960c9c7bd28661, type: 3}
+--- !u!1 &1561685043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2472128538656728846, guid: 8bfcfeb86eece39478960c9c7bd28661,
+    type: 3}
+  m_PrefabInstance: {fileID: 1561685042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1576139722
 Mesh:
   m_ObjectHideFlags: 0
@@ -7926,7 +7951,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh70286
+  m_Name: pb_Mesh173768
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8233,7 +8258,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 205995485}
+      objectReference: {fileID: 1561685043}
     - target: {fileID: 6643855858227420386, guid: 4b0760cb754283043b53c2ae3c508a19,
         type: 3}
       propertyPath: speed

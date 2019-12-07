@@ -44,9 +44,8 @@ public class RotatorShop : MonoBehaviour
         }
         if (priceText != null)
         {
-            //nothing
+            priceText.text = price + " \n Bananas";
         }
-        priceText.text = price + " \n Bananas";
     }
 
     public bool Buy(int num)
