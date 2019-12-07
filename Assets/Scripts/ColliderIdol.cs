@@ -22,10 +22,8 @@ public class ColliderIdol : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("VVV");
         if (col.gameObject.tag == "MonkIdolRed")
         {
-            Debug.Log("DDDDDDD");
             Destroy(col.gameObject);
             Destroy(red);
         }
