@@ -9,6 +9,9 @@ public class MonkeyMainMenu : MonoBehaviour
     public TextMeshProUGUI raymondText;
     private Animator monkeyAnimator;
     private ArrayList nameList = new ArrayList();
+    public GameObject mainMenuMusic;
+    public GameObject camera;
+    public AudioClip ymcaSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,21 +37,37 @@ public class MonkeyMainMenu : MonoBehaviour
         nameList.Add("Owen");
         nameList.Add("Justin");
         nameList.Add("Matt");
+
+        mainMenuMusic = GameObject.FindGameObjectWithTag("MainMenuSound");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     private void Update()
     {
         if (Input.GetKeyDown("r"))
         {
-                raymondText.text = (string) nameList[Random.Range(0, nameList.Count)];
+            raymondText.text = (string) nameList[Random.Range(0, nameList.Count)];
+            mainMenuMusic.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown("y"))
         {
+            mainMenuMusic.gameObject.SetActive(false);
+            WaitCoroutine();
+            AudioSource.PlayClipAtPoint(ymcaSound, camera.transform.position);
+            
             raymondText.text = "YMCA";
             monkeyAnimator.SetTrigger("YMCA");
+
             
         }
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        Debug.Log("hi");
+        yield return new WaitForSeconds(3.0f);
+        mainMenuMusic.gameObject.SetActive(true);
     }
 }
 
