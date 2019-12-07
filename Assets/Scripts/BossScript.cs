@@ -13,6 +13,8 @@ public class BossScript : MonoBehaviour
     public float rateOfFire = 1;
     public GameObject player;
 
+    public AudioClip bossSound;
+
     void Start()
     {
         
@@ -34,7 +36,6 @@ public class BossScript : MonoBehaviour
     void FireTheBounce()
     {
         AudioSource.PlayClipAtPoint(bossSound, transform.position);
-
         Instantiate(projectilePrefab, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), Quaternion.identity);
     }
 

@@ -39,6 +39,7 @@ public class mattBallController : MonoBehaviour
     public GameObject red;
     public GameObject blue;
     public GameObject green;
+    public AudioClip errorSound;
 
 
 
@@ -115,8 +116,13 @@ public class mattBallController : MonoBehaviour
             switch (selectedIndex)
             {
                 case 0:
+                    if(singletonGameManager.Instance.numJumpItem <= 0)
+                    {
+
+                    }
                     print("Jump");
                     jumpItem.useSingleJump(visibleBall);
+                    
                     break;
                 case 1:
                     print("Speed Up");

@@ -1968,3 +1968,4 @@ MonoBehaviour:
   red: {fileID: 0}
   blue: {fileID: 0}
   green: {fileID: 0}
+  errorSound: {fileID: 0}
