@@ -39,8 +39,6 @@ public class BossScript : MonoBehaviour
         StartCoroutine(WaitCoroutine());
     }
 
-    
-
     IEnumerator WaitCoroutine()
     {
         yield return new WaitForSeconds(3.0f);
